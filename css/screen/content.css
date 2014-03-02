@@ -10,8 +10,8 @@
  * @link            http://www.yaml.de
  * @package         yaml
  * @version         3.2.1
- * @revision        $Revision: 1.1 $
- * @lastmodified    $Date: 2014/03/02 10:47:31 $
+ * @revision        $Revision: 1.2 $
+ * @lastmodified    $Date: 2014/03/02 19:27:59 $
  * @appdef yaml
  */
 
@@ -37,23 +37,57 @@
   * @see: http://webkit.org/blog/67/strange-medium/
   */
 
+
+font-face{ 
+	font-family: "Harabara";
+    font-weight:normal;
+    letter-spacing: 0.1em;
+	src: url(/fonts/Harabara.eot);
+	src: local("Harabara"), url(/fonts/Harabara.ttf) format("truetype");
+}
+
+/*
   textarea, pre, code, kbd, samp, var, tt {
     font-family:Consolas, "Lucida Console", "Andale Mono", "Bitstream Vera Sans Mono", "Courier New", Courier;
+  }
+*/
+  textarea, pre, code, kbd, samp, var, tt {
+    font-family:'Harabara'; src: url('/fonts/Harabara.ttf') format('truetype');
+    letter-spacing: 0.1em;
+    font-weight:normal;
   }
 
   /* (en) base layout gets standard font size 12px */
   /* (de) Basis-Layout erhält Standardschriftgröße von 12 Pixeln */
+/*
   body {
     font-family:Arial, Helvetica, sans-serif;
     font-size:75.00%;
     color:#444;
   }
+*/
+
+  body {
+    font-family:'Harabara'; src: url('/fonts/Harabara.ttf') format('truetype');
+    font-size:100.01%;
+    font-weight:normal;
+    letter-spacing: 0.1em;
+    color:#444;
+  }
 
   /*--- Headings | Überschriften ------------------------------------------------------------------------*/
-
+/*
   h1,h2,h3,h4,h5,h6 {
     font-family:"Times New Roman", Times, serif;
     font-weight:normal;
+    color:#222;
+    margin:0 0 0.25em 0;
+  }
+*/
+  h1,h2,h3,h4,h5,h6 {
+    font-family:'Harabara'; src: url('/fonts/Harabara.ttf') format('truetype');
+    font-weight:normal;
+//    letter-spacing: 0.15em;
     color:#222;
     margin:0 0 0.25em 0;
   }
@@ -92,8 +126,8 @@
   strong,b { font-weight:bold; }
   em,i { font-style:italic; }
 
-  big { font-size:116.667%; }
-  small { font-size:91.667%; }
+  big { font-size:120.00%; }
+  small { font-size:90.00%; }
  
   pre { line-height:1.5em; margin:0 0 1em 0; }
   pre, code, kbd, tt, samp, var { font-size:100%; }
@@ -108,7 +142,7 @@
     cursor:help;
   }
 
-  sub, sup { font-size:91.6667%; line-height:0; }
+  sub, sup { font-size:90.00%; line-height:0; }
 
   hr {
     color:#fff;
@@ -139,7 +173,7 @@
   p.icaption_right img { padding:0; border:1px #888 solid; }
 
   p.icaption_left strong,
-  p.icaption_right strong { display:block; overflow:hidden; margin-top:2px; padding:0.3em 0.5em; background:#eee; font-weight:normal; font-size:91.667%; }
+  p.icaption_right strong { display:block; overflow:hidden; margin-top:2px; padding:0.3em 0.5em; background:#eee; font-weight:normal; font-size:90.00%; }
 
  /**
   * ------------------------------------------------------------------------------------------------- #
@@ -155,7 +189,7 @@
   .highlight { color:#c30; }
   .dimmed { color:#888; }
 
-  .info { background:#f8f8f8; color:#666; padding:10px; margin-bottom:0.5em; font-size:91.7%; }
+  .info { background:#f8f8f8; color:#666; padding:10px; margin-bottom:0.5em; font-size:90.00%; }
 
   .note { background:#efe; color:#040; border:2px #484 solid; padding:10px; margin-bottom:1em; }
   .important { background:#ffe; color:#440; border:2px #884 solid; padding:10px; margin-bottom:1em; }
