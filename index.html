@@ -19,7 +19,7 @@
           <!-- start: skip link navigation -->
           <a class="skip" title="skip link" href="#navigation">Skip to the navigation</a><span class="hideme">.</span>
           <a class="skip" title="skip link" href="#content">Skip to the content</a><span class="hideme">.</span>
-          <!-- end: skip link navigation --><a href="#">Contakt</a> | <a href="#">Impressum</a>
+          <!-- end: skip link navigation --><a href="#">Kontakt</a> | <a href="#">Impressum</a>
         </div>
         <div class="subcolumns">
           <div class="c33l">
@@ -78,6 +78,60 @@
         </div>
         <div id="col3">
           <div id="col3_content" class="clearfix">
+<!-- Einfache Bannergestaltung ohne Javascript -->
+			<script type="text/javascript"><!--
+function ReplaceContentInContainer(id,content) {
+var container = document.getElementById(id);
+container.innerHTML = content;
+}
+
+(function () {
+var container = document.getElementById("click_banner");
+container.innerHTML = "<a href=\"javascript:ReplaceContentInContainer('example1div','Whew! You clicked!')\">Click me to replace the content in the container.</a>";
+})();
+window.onload = function() {
+};
+
+//--></script>
+<div id="example1div"></div>
+<div id="click_banner"></div>
+<div id="example3div"></div>
+
+<script type="text/javascript"><!--
+var containerID = "example3div";
+var number = 1;
+var timerID = setInterval("CountdownTimer()",1000);
+
+function getBanner(number) {
+	switch (number) {
+		case 1:
+			return "<a href=\"#\"><img src=\"banner01.png\"/>Banner 1</a>";
+		case 2:
+			return "<a href=\"#\"><img src=\"banner02.png\"/>Banner 2</a>";
+		case 3:
+			return "<a href=\"#\"><img src=\"banner03.png\"/>Banner 3</a>";
+		case 4:
+			return "<a href=\"#\"><img src=\"banner04.png\"/>Banner 4</a>";
+		case 5:
+			return "<a href=\"#\"><img src=\"banner05.png\"/>Banner 5</a>";
+	}
+	return "";
+}
+function CountdownTimer() {
+if(number < 5) {
+	ReplaceContentInContainer(containerID,getBanner(number));
+	number++;
+	}
+else {
+	clearInterval(timerID);
+	ReplaceContentInContainer(containerID,getBanner(number));
+	}
+}
+//--></script>
+
+          	<noscript>
+			<iframe name="Framename" src="banner/index/banner01.html" marginwidth="0" marginheight="0" frameborder="0" scrolling="no"></iframe> 
+			</noscript>
             <!-- add your content here -->
             <p><b>Steigern Sie Ihre Produktivit&auml;t mit Modellgetriebener Softwareentwicklung</b></p>
             <p>Modellgetriebene Softwareentwicklung wird in diversen Foren und Puplikationen als vielversprechende Variante beschrieben, wie Sie Zeit sparen und Qualität steigern. Hier wird eine Möglichkeit aufgezeigt, wie Sie einen Teil davon erreichen k&ouml;nnen.</p>
