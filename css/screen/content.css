@@ -10,8 +10,8 @@
  * @link            http://www.yaml.de
  * @package         yaml
  * @version         3.2.1
- * @revision        $Revision: 1.12 $
- * @lastmodified    $Date: 2014/03/08 10:29:29 $
+ * @revision        $Revision: 1.13 $
+ * @lastmodified    $Date: 2014/03/08 10:34:21 $
  * @appdef yaml
  */
 
@@ -39,7 +39,7 @@
 
 
 @font-face{ 	font-family: "Harabara";
-	src: url("fonts/Harabara.ttf") format("truetype");	src: local("Harabara"), url("fonts/Harabara.woff") format("woff"), url("fonts/Harabara.ttf") format("truetype");
+	src: url("/fonts/Harabara.ttf") format("truetype");	src: local("Harabara"), url("/fonts/Harabara.woff") format("woff"), url("/fonts/Harabara.ttf") format("truetype");
 }
 /*
   textarea, pre, code, kbd, samp, var, tt {
