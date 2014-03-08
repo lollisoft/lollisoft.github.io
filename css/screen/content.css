@@ -10,8 +10,8 @@
  * @link            http://www.yaml.de
  * @package         yaml
  * @version         3.2.1
- * @revision        $Revision: 1.4 $
- * @lastmodified    $Date: 2014/03/07 05:16:55 $
+ * @revision        $Revision: 1.5 $
+ * @lastmodified    $Date: 2014/03/08 09:08:03 $
  * @appdef yaml
  */
 
@@ -42,8 +42,9 @@
 	font-family: "Harabara";
     font-weight:normal;
     letter-spacing: 0.1em;
-	src: url(/fonts/Harabara.eot);
-	src: local("Harabara"), url(/fonts/Harabara.ttf) format("truetype");
+//	src: url(/fonts/Harabara.eot);
+	src: url(/fonts/Harabara.ttf) format(truetype);
+//	src: local("Harabara"), url(/fonts/Harabara.ttf) format("truetype");
 }
 
 /*
