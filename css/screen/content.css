@@ -10,8 +10,8 @@
  * @link            http://www.yaml.de
  * @package         yaml
  * @version         3.2.1
- * @revision        $Revision: 1.13 $
- * @lastmodified    $Date: 2014/03/08 10:34:21 $
+ * @revision        $Revision: 1.14 $
+ * @lastmodified    $Date: 2014/06/20 13:14:58 $
  * @appdef yaml
  */
 
@@ -61,6 +61,118 @@
     color:#444;
   }
 */
+
+@keyframes fadeinphoto{
+0%{opacity:0;}
+50%{opacity:1;}
+100%{opacity:0;}
+}
+
+@-moz-keyframes fadeinphoto{
+0%{opacity:0;}
+50%{opacity:1;}
+A100%{opacity:0;}
+}
+
+@-webkit-keyframes fadeinphoto{
+0%{opacity:0;}
+50%{opacity:1;}
+100%{opacity:0;}
+}
+
+@-o-keyframes fadeinphoto{
+0%{opacity:0;}
+50%{opacity:1;}
+100%{opacity:0;}
+}
+
+.photo1{
+opacity:0;
+animation: fadeinphoto 7s 1;
+-moz-animation: fadeinphoto 7s 1;
+-webkit-animation: fadeinphoto 7s 1;
+-o-animation: fadeinphoto 7s 1;
+float:left;
+position:absolute;
+width: inherit;
+}
+
+.photo2{
+opacity:0;
+animation: fadeinphoto 7s 5s 1;
+-moz-animation: fadeinphoto 7s 5s 1;
+-webkit-animation: fadeinphoto 7s 5s 1;
+-o-animation: fadeinphoto 7s 5s 1;
+float:left;
+position:absolute;
+width: inherit;
+}
+
+.photo3{
+opacity:0;
+animation: fadeinphoto 7s 10s 1;
+-moz-animation: fadeinphoto 7s 10s 1;
+-webkit-animation: fadeinphoto 7s 10s 1;
+-o-animation: fadeinphoto 7s 10s 1;
+float:left;
+position:absolute;
+width: inherit;
+}
+
+.photo4{
+opacity:0;
+animation: fadeinphoto 7s 15s 1;
+-moz-animation: fadeinphoto 7s 15s 1;
+-webkit-animation: fadeinphoto 7s 15s 1;
+-o-animation: fadeinphoto 7s 15s 1;
+float:left;
+position:absolute;
+width: inherit;
+}
+
+.photo5{
+opacity:0;
+animation: fadeinphoto 7s 20s 1;
+-moz-animation: fadeinphoto 7s 20s 1;
+-webkit-animation: fadeinphoto 7s 20s 1;
+-o-animation: fadeinphoto 7s 20s 1;
+float:left;
+position:absolute;
+width: inherit;
+}
+
+
+@keyframes slidein {
+  from {
+  	top: 0px;
+  	position: relative;
+    margin-left: 100%;
+    width: 0px; 
+  }
+
+  to {
+  	top: 0px;
+  	position: absolute;
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+@keyframes slideout {
+  from {
+  	top: 0px;
+  	position: relative;
+    margin-left: -100%;
+    width: 0px; 
+  }
+
+  to {
+  	top: 0px;
+  	position: absolute;
+    margin-left: 0%;
+    width: 100%;
+  }
+}
 
   body {
 	font-family:"Harabara", verdana, helvetica, sans-serif;  

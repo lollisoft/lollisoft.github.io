@@ -61,6 +61,9 @@
 
   #footer { bottom: 0px; padding: 10px 20px; color:#666; background: #efeeee; border-top: 5px #efefef solid; }
 
+  .slide_in { animation-duration: 5s; animation-name: slidein; }
+  .slide_out { animation-duration: 5s; animation-name: slideout; }
+
   /* (en) navigation: horizontal adjustment | (de) horizontale Ausrichtung  */
   #nav ul { margin-left: 20px; }
 
