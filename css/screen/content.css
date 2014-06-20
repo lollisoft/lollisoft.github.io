@@ -10,8 +10,8 @@
  * @link            http://www.yaml.de
  * @package         yaml
  * @version         3.2.1
- * @revision        $Revision: 1.14 $
- * @lastmodified    $Date: 2014/06/20 13:14:58 $
+ * @revision        $Revision: 1.15 $
+ * @lastmodified    $Date: 2014/06/20 13:43:36 $
  * @appdef yaml
  */
 
@@ -145,7 +145,7 @@ width: inherit;
 @keyframes slidein {
   from {
   	top: 0px;
-  	position: relative;
+  	position: absolute;
     margin-left: 100%;
     width: 0px; 
   }
@@ -161,7 +161,7 @@ width: inherit;
 @keyframes slideout {
   from {
   	top: 0px;
-  	position: relative;
+  	position: absolute;
     margin-left: -100%;
     width: 0px; 
   }
@@ -170,7 +170,7 @@ width: inherit;
   	top: 0px;
   	position: absolute;
     margin-left: 0%;
-    width: 100%;
+    width: auto;
   }
 }
 

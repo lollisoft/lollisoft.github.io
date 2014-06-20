@@ -85,10 +85,18 @@
 <script type="text/javascript"><!--
 		
 var originalHTMl = undefined;
+var timerID = undefined;
 
 function ReplaceContentInContainer(id,content) {
 var container = document.getElementById(id);
 container.innerHTML = content;
+container.onclick = function() {
+	$("#" + id).fadeOut();
+	window.clearTimeout(timerID);
+   $("#col1").fadeIn();
+   $("#col2").fadeIn();
+   $("#col3").fadeIn();
+};
 }
 
 (function () {
@@ -104,7 +112,7 @@ window.onload = function() {
 var containerID = "example3div";
 var number = 2;
 
-var timerID = setInterval("CountdownTimer()",10000);
+timerID = setInterval("CountdownTimer()",10000);
 
 //ReplaceContentInContainer(containerID,getBanner(1));
 
@@ -208,5 +216,6 @@ A <a href="http://www.yaml.de/">YAML</a> Layout. &copy; Lothar Behrens
    $("#col2").hide();
    $("#col3").hide();
    //$(containerID).show();
+   $("#main").css("overflow", "hidden");
 ReplaceContentInContainer(containerID,getBanner(1));
 //--></script>
