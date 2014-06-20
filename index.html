@@ -88,17 +88,19 @@ var originalHTMl = undefined;
 var timerID = undefined;
 
 function ReplaceContentInContainer(id,content) {
-var container = document.getElementById(id);
-container.innerHTML = content;
-container.onclick = function() {
-	$("#" + id).fadeOut();
-	window.clearTimeout(timerID);
-   $("#col1").fadeIn();
-   $("#col2").fadeIn();
-   $("#col3").fadeIn();
-};
-}
+	var container = document.getElementById(id);
+	
+	container.innerHTML = content;
+	container.onclick = function() {
+		$("#" + id).fadeOut();
+		window.clearTimeout(timerID);
+		$("#col1").fadeIn();
+		$("#col2").fadeIn();
+		$("#col3").fadeIn();
+		$("#teaser").html("<p></p><h1 align=\"center\">Steigern Sie Ihre Produktivit&auml;t mit Modellgetriebener Softwareentwicklung</h1><p></p>");
+	};
 
+}
 (function () {
 var container = document.getElementById("click_banner");
 container.innerHTML = "<a href=\"javascript:ReplaceContentInContainer('example1div','Whew! You clicked!')\">Click me to replace the content in the container.</a>";
@@ -126,7 +128,7 @@ function getBanner(number) {
 			$("#teaser").html("<p></p><h1 align=\"center\">Provitieren Sie von schnell umsetzbaren Ideen</h1><p></p>");
 			return "<a class=\"slide_out\" href=\"#\"><img src=\"http://t1.ftcdn.net/jpg/00/58/63/58/240_F_58635850_ThGavLxMPGehWgyO0ONwdM3dVuJZoJc8.jpg\" width=\"100%\"/></a>";
 		case 3:
-			$("#teaser").html("<p></p><h1 align=\"center\">Automatisieren Sie die Maskenerstellung</h1><p></p>");
+			$("#teaser").html("<p></p><h1 align=\"center\">Automatisieren Sie die Softwareentwicklung</h1><p></p>");
 			return "<a class=\"slide_in\" href=\"#\"><img src=\"http://t2.ftcdn.net/jpg/00/64/19/63/240_F_64196361_3WQu7KPxghUyBPkKOR63yAkFOh5Rtbmm.jpg\" width=\"100%\"/></a>";
 		case 4:
 			$("#teaser").html("<p></p><h1 align=\"center\">Machen Sie den Vorhang f&uuml;r Ihre Demonstration sofort auf</h1><p></p>");
