@@ -83,4 +83,12 @@
   #col3_content { padding: 0 10px }
 	
   /*-------------------------------------------------------------------------*/
+
+  #introdiv_col1 { float: left; width: 25%;  margin:0 }
+  #introdiv_col2 { float: right; width: 25%;  margin:0 }
+  #introdiv_col3 { width: auto; margin: 0 25% 0 25%}
+  #introdiv_col1_content { padding: 0 10px 0 20px }
+  #introdiv_col2_content { padding: 0 20px 0 10px }
+  #introdiv_col3_content { padding: 0 10px }
+
 }

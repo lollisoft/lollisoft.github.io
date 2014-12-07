@@ -19,7 +19,7 @@
           <!-- start: skip link navigation -->
           <a class="skip" title="skip link" href="#navigation">Skip to the navigation</a><span class="hideme">.</span>
           <a class="skip" title="skip link" href="#content">Skip to the content</a><span class="hideme">.</span>
-          <!-- end: skip link navigation --><a href="#">Kontakt</a> | <a href="impressum.html">Impressum</a> | <a href="datenschutz.html">Datenschutz</a>
+          <!-- end: skip link navigation --><a href="https://twitter.com/lollisoft">Kontakt (via Twitter)</a> | <a href="impressum.html">Impressum</a> | <a href="datenschutz.html">Datenschutz</a>
         </div>
         <div class="subcolumns">
           <div class="c33l">
@@ -46,11 +46,13 @@
         <div class="hlist">
           <!-- main navigation: horizontal list -->
           <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="home.html">Home</a></li>
             <li><a href="products.html">Produkte</a></li>
             <li><a href="services.html">Dienstleistungen</a></li>
+<!--
             <li><a href="articles.html">Artikel</a></li>
             <li><a href="support.html">Support</a></li>
+-->
 			<div class="nav">
 			<ul>
             		<li class="active"><strong>Distributed Multiplatform Framework</strong></li>
@@ -83,24 +85,34 @@
         <div id="col3">
           <div id="col3_content" class="clearfix">
             <!-- add your content here -->
+                  <p>Dieses Framework ist gedacht f&uuml;r die schnelle Entwicklung von Datengetriebenen Anwendungen. Unter diese fallen Business Anwendungen, welche wenige bis sehr viele verschiedene Daten speichern k&ouml;nnen und bearbeiten lassen. Das in der Folge dargestellte Szenario ist aus unserer Entwicklung und stellt ein reales Feature dar. Es geht um einen anfangs von Hand erstellten Service, der nun eine Verwaltungsoberfl&auml;che bekommen soll.</p>
+
 				  <img class="float_left" src="images/stickman_5.png" alt="Sample"/>
-                  <p>Legen wir los. Ein einfacher Authentication Service entsteht in wenigen Schritten. Sie sehen ein UML Modell als Grundlage f&uuml;r die folgenden Anforderungen:</p>
+                  <p>Legen wir los. Ein einfacher Authentication Service soll um eine Management Oberfl&auml;che erweitert werden. Sie sehen ein UML Modell als Grundlage f&uuml;r die folgenden Anforderungen:</p>
 				  <img class="float_left" src="images/StsManagement.png" alt="Sample"/>
-				  <p><b>Anforderungen an das System:</b></p>
+				  <p><b>Bisherige Anforderungen an das System:</b></p>
 				  
 				  <p>Ein Service nutzer soll sich mittels eines zentralen Authentication Services anmelden k&ouml;nnen. Verschiedene Services sollen mit einem erstellten Token zugreifbar sein.</p>
 				  
-				  <p>Ein Token ist ein Ersatz für eine Anmeldung an den eigentlichen Services. Diese sind nicht an den &uuml;blichen Benutzernamen mit einem Passwort interessiert, sondern an einem Token, das nach einer gewissen Zeit (5 Minuten) abl&auml;ft.</p>
+				  <p>Ein Token ist ein Ersatz für eine Anmeldung an den eigentlichen Services. Diese sind nicht an den &uuml;blichen Benutzernamen mit einem Passwort interessiert, sondern an einem Token, das nach einer gewissen Zeit (5 Minuten) abl&auml;uft.</p>
 				  
+				  <p><b>Neue Anforderungen:</b></p>
+
+				  <p>Eine Management Software soll die Verwaltung des Authentication Services vereinfachen. Die bisherige L&ouml;sung bestand noch darin, die Daten direkt in den Tabellen zu bearbeiten.</p>
+				  
+				  <p><b>Istzustand des Systems:</b></p>
+
 				  <p>Da der Service selbst schon in den Grundz&uuml;gen entwickelt wurde, hatte dieser schon eine Tabelle, die f&uuml;r eine Anmeldung verwendet wurde. Eine Erweiterung um die restlichen Tabellen ist notwendig, aber es wird auch eine Anwendung ben&ouml;tigt, welche das Anlegen und Verwalten von Benutzern erm&ouml;glichen soll.</p>
 
-				  <p>Der Prototyper konnte f&uuml;r diese Aufgabe herangezogen werden, denn dieser hat ja die M&ouml;glichkeit Code zu generieren um der Management Anwendung Leben einzuhauchen. Es war auch absicht, diese zuerst zu erstellen und nicht den Authentication Service manuell um die ben&ouml;tigten Tabellen zu erweitern.</p>
+				  <p>Der Prototyper kann f&uuml;r diese Aufgabe herangezogen werden, denn dieser ist in der Lage Code zu generieren um der Management Anwendung Leben einzuhauchen. Es ist auch absicht, diese zuerst zu erstellen und nicht den Authentication Service manuell um die ben&ouml;tigten Tabellen zu erweitern.</p>
                   
-                  <p>Aus dem Generat der Management Anwendung konnten die restlichen Tabellen herauskopiert werden und in den Authentication Service integriert werden. Als dies gemacht war, konnte der verbleibende Code im Service umgebaut werden, sodass die Konfiguration nicht mehr aus der Konfigurationsdatei, sondern aus der Datenbank geladen werden kann.</p>
+                  <p>Aus dem Generat der Management Anwendung werden die restlichen Tabellen herauskopiert und in den Authentication Service integriert. Der verbleibende Code im Service wird dann umgebaut, sodass die Management Anwendung integriert werden kann.</p>
                   
                   <p><b>Fazit:</b></p>
                   
 				  <img class="float_left" src="images/stickman_6.png" alt="Sample"/>
+
+                  <p>Die Management Anwendung wurde ausgehend von einem UML Modell entwickelt. Diese wurde dann auch komplett automatisch generiert. Teile des Generates wurden dann in den Service &uuml;bernommen um eine Integration zu schaffen.</p>
 
                   <p>Dies zeigt, dass zwar nicht alle Teile einer Anwendung Modelliert werden k&ouml;nnen, aber ein betr&auml;chtlicher Teil schon. Auch wenn der Authentication Service kein Kandidat f&uuml;r eine Modellgertiebene Software Entwicklung zu sein scheint, war hier ein Teil machbar, indem in der richtigen Reihenfolge gearbeitet wurde.</p>
 
@@ -112,9 +124,11 @@
 
 				  <img class="float_left" src="images/StsManagementApp.png" width="320px" alt="Sample"/>
 
-                  <p>Es sind Zertifikate f&uuml;r zwei Services registriert, die durch den STS Service f&uuml;r die eingerichteten Nutzer Accounts ferf&uuml;gbar gemnacht wurden. Beide Anwendungen, der STS Service und die Stsmanagement Anwendung sind mittels eines Codegenerator Templates erstellt worden. Der Screenshot ist in einer FullHD Aufl&ouml;sung erstellt worden und kann dementsprechend vergr&ouml;&szlig;ert werden.</p>
+                  <p>Es sind Zertifikate f&uuml;r zwei Services registriert, die durch den STS Service f&uuml;r die eingerichteten Nutzer Accounts verf&uuml;gbar gemnacht wurden. Beide Anwendungen, der STS Service und die Stsmanagement Anwendung sind mittels eines Codegenerator Templates erstellt worden. Der Screenshot ist in einer FullHD Aufl&ouml;sung erstellt worden und kann dementsprechend vergr&ouml;&szlig;ert werden.</p>
 
                   <p>Weiter wird pro Anwendung der entsprechende Service generiert, auf den durch die Anwendung zugegriffen wird.</p>
+
+                  <p>Ein STS Service ist ein Security Token Service, welcher oben genannte Tokens ausstellt, nachdem sich ein Benutzer erfolgreich bei diesem Authentifiziert hat.</p>
             </div>
           </div>
           <!-- IE Column Clearing -->

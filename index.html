@@ -19,7 +19,7 @@
           <!-- start: skip link navigation -->
           <a class="skip" title="skip link" href="#navigation">Skip to the navigation</a><span class="hideme">.</span>
           <a class="skip" title="skip link" href="#content">Skip to the content</a><span class="hideme">.</span>
-          <!-- end: skip link navigation --><a href="#">Kontakt</a> | <a href="impressum.html">Impressum</a> | <a href="datenschutz.html">Datenschutz</a>
+          <!-- end: skip link navigation --><a href="https://twitter.com/lollisoft">Kontakt (via Twitter)</a> | <a href="impressum.html">Impressum</a> | <a href="datenschutz.html">Datenschutz</a>
         </div>
         <div class="subcolumns">
           <div class="c33l">
@@ -49,13 +49,19 @@
             <li class="active"><strong>Home</strong></li>
             <li><a href="products.html">Produkte</a></li>
             <li><a href="services.html">Dienstleistungen</a></li>
+<!--
             <li><a href="articles.html">Artikel</a></li>
             <li><a href="support.html">Support</a></li>
+-->
           </ul>
         </div>
       </div>
       <div id="teaser">
+<!--
       <p></p><h1 align="center">Steigern Sie Ihre Produktivit&auml;t mit modellgetriebener Softwareentwicklung</h1><p></p>
+-->
+      <p></p><h1 align="center">Softwareentwicklung kostet <b>Zeit</b>. Haben Sie die?</h1><p></p>
+
 
 <!--        <div id="col1">
         </div>
@@ -86,20 +92,24 @@
 		
 var originalHTMl = undefined;
 var timerID = undefined;
+var totalBanners = 6;
+
+var clickTeaser = "<p></p><h1 align=\"center\">Softwareentwicklung kostet <b>Zeit</b>. Haben Sie die?</h1><p></p>";
 
 function ReplaceContentInContainer(id,content) {
 	var container = document.getElementById(id);
 	
 	container.innerHTML = content;
 	container.onclick = function() {
+		$("#main").html(originalHTMl);
+        $("#col3_content").hide();
 		$("#" + id).fadeOut();
 		window.clearTimeout(timerID);
-		$("#col1").fadeIn();
-		$("#col2").fadeIn();
-		$("#col3").fadeIn();
-		$("#teaser").html("<p></p><h1 align=\"center\">Steigern Sie Ihre Produktivit&auml;t mit modellgetriebener Softwareentwicklung</h1><p></p>");
+		$("#col1").fadeIn(3000);
+		$("#col2").fadeIn(3000);
+		$("#col3").fadeIn(6000);
+		$("#teaser").html(clickTeaser);
 	};
-
 }
 (function () {
 var container = document.getElementById("click_banner");
@@ -111,43 +121,220 @@ window.onload = function() {
 
 //--></script>
 <script type="text/javascript"><!--
-var containerID = "example3div";
+var containerID = "introdiv";
 var number = 2;
+var timerPaused = 0;
 
-timerID = setInterval("CountdownTimer()",10000);
+timerID = setInterval("CountdownTimer()",5000);
 
 //ReplaceContentInContainer(containerID,getBanner(1));
+
+function getLandingTimeFact() {
+    return "<div id=\"landing_content\" class=\"clearfix\" align=\"top\">" +
+    "Heute ist der Konkurrenzdruck hoch. Zeit spielt dabei eine mitunter ausschlaggebende Rolle. Profitieren Sie von der Zeitersparnis." +
+    "<br>" +
+    "<br>" +
+    "Ein beachtlicher Anteil von bis zu 80% der Software kann maschinell hergestellt werden, da diese Anteile wiederholenden Charakter haben. " +
+    "Ein Ansatz bei sich wiederholenden Aufgaben kennen Sie sicherlich aus der Zeit der Industrialisierung! Fabriken und Dinge vom Band. " +
+    "Dies ist bezogen auf den Computer eine Aufgabe, die dieser wunderbar und vorallem fehlerfrei immer wieder machen kann." +
+    "<br>" +
+    "<br>" +
+    "<b>Fabrizieren von Programmcode.</b>" +
+    "<br>" +
+    "<br>" +
+    "<img class=\"float_right\" src=\"images/lbDMFManegerRunning.png\" width=\"480px\" alt=\"Sample\"/>" +
+	"Eine Anwendung wie diese ist in sehr kurzer Zeit erstellbar. " +
+    "Der Codegenerator enth&auml;lt etwa 250 Dateien. Der generierte Code diesr Anwendung besteht aus etwa 1000 Dateien. Der Generator wurde " +
+    "in etwa einem Monat entwickelt, kann aber nun in diversen Projekten von gleichartigen Anwendungen herangezogen werden. Sie sparen um so " +
+    "mehr Zeit je &ouml;fter Sie den Generator nutzen."
+
+    "</div>";
+}
+
+function getLandingAutomationFact() {
+    return "<div id=\"landing_content\" class=\"clearfix\" align=\"top\">" +
+    "Programmcode, der automatisiert erstellt wird, ist f&uuml;r immer fehlerfrei, sobald er ohne Fehler generiert wird." +
+    "<br>" +
+    "<br>" +
+    "Wie in einer Fabrik durch die Automatisierung die Qualit&auml;t immer verbessert wird, kann die Codequalit&auml;t nach und nach verbessert werden. " +
+    "Ein Nachteil bei manuell erstelltem Code sind Fl&uuml;chtigkeitsfehler, die immer mal wieder vorkommen. Dies ist nat&uuml;rlich auch dann der Fall," +
+    "wenn der Code automatisch erstellt wird. <b>Aber</b>: Sie korrigieren diese nur <b>einmal</b>!" +
+    "<br>" +
+    "<br>" +
+    "Somit beseitigen Sie evtl. vorhandene Fehler schneller, systematischer und durch die Wiederholung alle betroffenen Stellen auf einmal. " +
+    "Weiter k&ouml;nnen Sie immer wieder zu generierenden Code in einem sogenannten Activity Diagramm modellieren. Hier haben Sie die M&ouml;glichkeit, je " +
+    "nach Plattworm zu reagieren und unterschiedliche Aktionen starten. Dies vereinfacht abl&auml;ufe und reduziert weitere Fehlerquellen. Dies sind bspw. " +
+    "mehrere Generatoren, die sie brauchen, aber einen dabei vergessen." +
+    "<img class=\"float_right\" src=\"images/CodegenerationWorkflow.png\" width=\"480px\" alt=\"Sample\"/>" +
+    "<br>" +
+    "<br>" +
+    "Obiges Bild zeigt einen einfachen Generator Vorgang, aber unterscheidet zwischen den Betriebssystemen. Als Plattform kann die Zusammensetzung aus Steuerparamentern " +
+    "verstanden werden, die verschiedene Aspekte aktivieren. Hierunter fallen dann auch die Auswahl und validierung gew&auml;hlter Einstellungen. " +
+    "Sie haben schneller besseren Code erstellt. Fl&uuml;chtigkeitsfehler sind kein Zeitfaktor mehr, da Sie nicht mehr variieren." +
+    "<br>" +
+    "</div>";
+}
+
+function getLandingSystemFact() {
+    return "<div id=\"landing_content\" class=\"clearfix\" align=\"top\">" +
+    "Die Wahl des Systems spielt keine Rolle und sollte es auch nicht. Heute stellt sich nicht mehr die Frage nach dem System, sondern nach welchen Systemen." +
+    "<br>" +
+    "<br>" +
+    "Es ist sehr aufw&auml;ndig, Software zu entwickeln. Erstrecht wenn diese f&uuml;r mehrere Systeme gedacht ist. Wenn Sie hier von Hand herangehen, haben wir ein Argument, dies zu ändern. " +
+    "Es gibt zwar verschiedene Ans&auml;tze f&uuml;r HTML5 basierte Anwendungen, um die Software nur einmal zu entwickeln. Es h&ouml;hrt aber bei HTML5 meistens auf." +
+    "" +
+    "<br>" +
+    "<br>" +
+    "Wollen Sie beispielsweise für Tablets, PC's und das Web die gleiche Funktionalit&auml;t bereitstellen, f&auml;llt die Wahl heute meist auf HTML5 L&auml;sungen. Aber dabei gehen " +
+    "Sie auch Kompromisse ein. Diese sind beispielsweise Performance, Auswahl der Programmiersprache." +
+    "<br>" +
+    "<br>" +
+    "<img class=\"float_right\" src=\"images/wxWrapperApplications.png\" width=\"480px\" alt=\"Sample\"/>" +
+    "<br>" +
+    "<br>" +
+    "Folgendes Bild zeigt die Anwendung, mit der Sie Code generieren. Sie Bietet eine UML Import Schnittstelle f&uuml;r ArgoUML und BoUML an. Mit BoUML ist auch ein Roundtrip m&ouml;glich, mit dessen Hilfe " +
+    "Sie eine deteiliertere UML Variente mit mehr M&ouml;glichkeiten erhalten." +
+    "<br>" +
+    "<br>" +
+    "Mit der Auswahl des Codegererators entfallen diese Einschr&auml;nkungen zumindest teilweise." +
+	"</div>";
+}
+
+function getLandingContents(number) {
+	switch (number) {
+		case 0:
+			return "";
+		case 1:
+            // Floating clock - no text while float
+			return "";
+		case 2:
+            clickTeaser = "<p></p><h1 align=\"center\">Softwareentwicklung kostet <b>Zeit</b>. Haben Sie die?</h1><p></p>";
+			return getLandingTimeFact();
+		case 3:
+			return "";
+		case 4:
+            clickTeaser = "<p></p><h1 align=\"center\">Verbessern Sie die Softwarequalit&auml;t</h1><p></p>";
+			return getLandingAutomationFact();
+		case 5:
+			return "";
+		case 6:
+            clickTeaser = "<p></p><h1 align=\"center\">Automatisieren Sie die Softwareentwicklung</h1><p></p>";
+			return getLandingSystemFact();
+	}
+	return "";
+}
 
 function getBanner(number) {
 	switch (number) {
 		case 0:
 			return "<a class=\"photo1\" href=\"#\"><img src=\"http://t2.ftcdn.net/jpg/00/51/15/55/240_F_51155523_LE4ZATWsohMbXwIEfInfD9guAhgNq252.jpg\" alt=\"\" width=\"100%\"/></a><a class=\"photo2\" href=\"#\"><img src=\"http://t1.ftcdn.net/jpg/00/58/63/58/240_F_58635850_ThGavLxMPGehWgyO0ONwdM3dVuJZoJc8.jpg\" alt=\"\" width=\"100%\"/></a><a class=\"photo3\" href=\"#\"><img src=\"http://t2.ftcdn.net/jpg/00/64/19/63/240_F_64196361_3WQu7KPxghUyBPkKOR63yAkFOh5Rtbmm.jpg\" alt=\"\" width=\"100%\"/></a><a class=\"photo4\" href=\"#\"><img src=\"http://t2.ftcdn.net/jpg/00/65/40/05/240_F_65400544_D5HUP0KRoAAw0IiRxUYkSRENArmEkWAn.jpg\" alt=\"\" width=\"100%\"/></a><a class=\"photo5\" href=\"#\"><img src=\"http://t2.ftcdn.net/jpg/00/66/01/19/240_F_66011985_FH7BSg0TOiWPYXOcUQvtJzT4MHnXB38G.jpg\" alt=\"\" width=\"100%\"/></a>";
 		case 1:
-			return "<a class=\"slide_in\" href=\"#\"><img src=\"http://t2.ftcdn.net/jpg/00/51/15/55/240_F_51155523_LE4ZATWsohMbXwIEfInfD9guAhgNq252.jpg\" width=\"100%\"/></a>";
+            clearInterval(timerID);
+            timerID = setInterval("CountdownTimer()",5000);
+
+			$("#teaser").html("<p></p><h1 align=\"center\">Softwareentwicklung kostet <b>Zeit</b>. Haben Sie die?</h1><p></p>");
+
+			return "<div id=\"introdiv_col1\"><div id=\"introdiv_col1_content\"><a class=\"slide_out\" href=\"#\"><img   src=\"images/clock_5_before_12.png\" height=\"500px\"/></a></div></div><div id=\"introdiv_col3\">" + getLandingContents(number) + "</div>";
 		case 2:
-			$("#teaser").html("<p></p><h1 align=\"center\">Provitieren Sie von schnell umsetzbaren Ideen</h1><p></p>");
-			return "<a class=\"slide_out\" href=\"#\"><img src=\"http://t1.ftcdn.net/jpg/00/58/63/58/240_F_58635850_ThGavLxMPGehWgyO0ONwdM3dVuJZoJc8.jpg\" width=\"100%\"/></a>";
+            clearInterval(timerID);
+            timerID = setInterval("CountdownTimer()",10000); // Text soll gelesen werden können
+
+			$("#teaser").html("<p></p><h1 align=\"center\">Softwareentwicklung kostet <b>Zeit</b>. Haben Sie die?</h1><p></p>");
+
+			return "<div id=\"introdiv_col1\"><div id=\"introdiv_col1_content\"><a href=\"#\"><img class=\"float_left\" src=\"images/clock_5_before_12.png\" height=\"500px\"/></a></div></div><div id=\"introdiv_col3\">" + getLandingContents(number) + "</div>";
 		case 3:
-			$("#teaser").html("<p></p><h1 align=\"center\">Automatisieren Sie die Softwareentwicklung</h1><p></p>");
-			return "<a class=\"slide_in\" href=\"#\"><img src=\"http://t2.ftcdn.net/jpg/00/64/19/63/240_F_64196361_3WQu7KPxghUyBPkKOR63yAkFOh5Rtbmm.jpg\" width=\"100%\"/></a>";
+            clearInterval(timerID);
+            timerID = setInterval("CountdownTimer()",5000);
+
+			$("#teaser").html("<p></p><h1 align=\"center\">Verbessern Sie die Softwarequalit&auml;t</h1><p></p>");
+			
+			return "<div id=\"introdiv_col1\"><div id=\"introdiv_col1_content\"><a class=\"slide_out\" href=\"#\"><img    src=\"images/quality_approved.png\" height=\"200px\"/></a></div></div><div id=\"introdiv_col3\">" + getLandingContents(number) + "</div>";
 		case 4:
-			$("#teaser").html("<p></p><h1 align=\"center\">Machen Sie sofort den Vorhang f&uuml;r die Pr&auml;sentation auf</h1><p></p>");
-			return "<a class=\"slide_out\" href=\"#\"><img src=\"http://t2.ftcdn.net/jpg/00/65/40/05/240_F_65400544_D5HUP0KRoAAw0IiRxUYkSRENArmEkWAn.jpg\" width=\"100%\"/></a>";
+            clearInterval(timerID);
+            timerID = setInterval("CountdownTimer()",10000); // Text soll gelesen werden können
+
+			$("#teaser").html("<p></p><h1 align=\"center\">Verbessern Sie die Softwarequalit&auml;t</h1><p></p>");
+			
+			return "<div id=\"introdiv_col1\"><div id=\"introdiv_col1_content\"><a href=\"#\"><img class=\"float_left\"  src=\"images/quality_approved.png\" height=\"200px\"/></a></div></div><div id=\"introdiv_col3\">" + getLandingContents(number) + "</div>";
 		case 5:
-			$("#teaser").html("<p></p><h1 align=\"center\">Lange Wartezeiten haben ein Ende</h1><p></p>");
-			$("#main").html(originalHTMl);
-			return "<a class=\"slide_in\" href=\"#\"><img src=\"http://t2.ftcdn.net/jpg/00/66/01/19/240_F_66011985_FH7BSg0TOiWPYXOcUQvtJzT4MHnXB38G.jpg\" width=\"100%\"/></a>";
+            clearInterval(timerID);
+            timerID = setInterval("CountdownTimer()",5000);
+
+			$("#teaser").html("<p></p><h1 align=\"center\">Automatisieren Sie die Softwareentwicklung</h1><p></p>");
+
+			return "<div id=\"introdiv_col1\"><div id=\"introdiv_col1_content\"><a class=\"slide_out\" href=\"#\"><img    src=\"images/VariousComputerTypes.png\" height=\"150px\"/></a></div></div><div id=\"introdiv_col3\">" + getLandingContents(number) + "</div>";
 	}
-	return "";
-}
-function CountdownTimer() {
-if(number < 5) {
-	ReplaceContentInContainer(containerID,getBanner(number));
-	number++;
-	}
-else {
+
+	// Abschluss der Banner Facts
+
 	clearInterval(timerID);
-	ReplaceContentInContainer(containerID,getBanner(number));
+    //timerID = setInterval("CountdownTimer()",60000); // Text soll gelesen werden können
+
+	$("#teaser").html("<p></p><h1 align=\"center\">Automatisieren Sie die Softwareentwicklung</h1><p></p>");
+	return "<div id=\"introdiv_col1\"><div id=\"introdiv_col1_content\"><a  href=\"#\"><img class=\"float_left\"    src=\"images/VariousComputerTypes.png\" height=\"150px\"/></a></div></div><div id=\"introdiv_col3\">" + getLandingContents(number) + "</div>";
+
+
+        
+}
+
+function setFadeIn(number) {
+    
+    //$("#col3_content").hide();
+    $("#landing_content").hide();
+    
+    switch (number) {
+		case 0:
+            $("#col3_content").fadeIn(2000);
+            $("#landing_content").fadeIn(6000);
+			return "";
+		case 1:
+            $("#teaser").fadeIn(1000);
+            $("#col3_content").fadeIn(2000);
+            $("#landing_content").fadeIn(6000);
+			return "";
+		case 2:
+            $("#teaser").fadeIn(1000);
+            $("#col3_content").fadeIn(2000);
+            $("#landing_content").fadeIn(6000);
+			return "";
+		case 3:
+            $("#teaser").fadeIn(1000);
+            $("#col3_content").fadeIn(2000);
+            $("#landing_content").fadeIn(6000);
+			return "";
+		case 4:
+            $("#teaser").fadeIn(1000);
+            $("#col3_content").fadeIn(2000);
+            $("#landing_content").fadeIn(6000);
+			return "";
+		case 5:
+            $("#teaser").fadeIn(1000);
+            $("#col3_content").fadeIn(2000);
+            $("#landing_content").fadeIn(6000);
+			return "";
+		case 6:
+            $("#teaser").fadeIn(1000);
+            $("#col3_content").fadeIn(2000);
+            $("#landing_content").fadeIn(6000);
+			return "";
+	}
+	
+    return "";
+}
+
+function CountdownTimer() {
+	if (timerPaused == 1) return;
+	
+	if(number < totalBanners) {
+    	$("#col3_content").hide();
+		ReplaceContentInContainer(containerID,getBanner(number));
+    	setFadeIn(number);
+		number++;
+	} else {
+		clearInterval(timerID);
+    	$("#col3_content").hide();
+		ReplaceContentInContainer(containerID,getBanner(number));
+    	setFadeIn(number);
 	}
 }
 //--></script>
@@ -175,7 +362,7 @@ else {
             <p>Wird der Code dagegen aus einer Vorlage erstellt, brauchen Sie den Fehler nur in der Vorlage zu beheben und drücken einen Knopf!</p>
           </div>
         </div>
-		<div id="example3div"></div>
+		<div id="introdiv"></div>
         <div id="col3">
 <!--
 <div id="example1div"></div>
@@ -214,10 +401,15 @@ A <a href="http://www.yaml.de/">YAML</a> Layout. &copy; Lothar Behrens
 </html>
 
 <script type="text/javascript"><!--
-   $("#col1").hide();
-   $("#col2").hide();
-   $("#col3").hide();
-   //$(containerID).show();
-   $("#main").css("overflow", "hidden");
-ReplaceContentInContainer(containerID,getBanner(1));
+    $("#col1").hide();
+    $("#col2").hide();
+    $("#col3").hide();
+    //$(containerID).show();
+    $("#main").css("overflow", "hidden");
+    
+    $("#teaser").hide();
+    $("#teaser").fadeIn(1000);
+    $("#col3_content").hide();
+    
+    ReplaceContentInContainer(containerID,getBanner(1));
 //--></script>
