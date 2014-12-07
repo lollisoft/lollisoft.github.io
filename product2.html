@@ -36,6 +36,7 @@
           <div class="c33r">
             <div class="subcr">
               <!-- Insert your subtemplate content here -->
+              <div id="language" class="float_right"></div>
             </div>
           </div>
         </div>
@@ -67,6 +68,7 @@
         <h1 align="center">Was ist CAB DevExpress Codegenerator Compilation?</h1>
       <p></p>
       </div>
+
       <div id="main">
         <div id="col1">
           <div id="col1_content" class="clearfix">
@@ -154,6 +156,15 @@
           <div id="ie_clearing"> &#160; </div>
         </div>
       </div>
+
+				<div id="german">
+
+				</div>
+				
+				<div id="english">
+
+				</div>
+
       <!-- begin: #footer -->
       <div id="footer">
 A <a href="http://www.yaml.de/">YAML</a> Layout. &copy; Lothar Behrens
@@ -162,3 +173,32 @@ A <a href="http://www.yaml.de/">YAML</a> Layout. &copy; Lothar Behrens
   </div>
 </body>
 </html>
+
+<script type="text/javascript" src="js/lib/jquery-1.6.1.min.js"></script>
+
+<script type="text/javascript"><!--
+	var languageMode=1;
+	var languageMode_de=1;
+	var languageMode_en=2;
+
+	var switchLanguage = function() {
+
+		if (languageMode == languageMode_de) {
+			languageMode=languageMode_en;
+			$("#language").html("<img src=\"images/de.png\" onclick=\"switchLanguage();\" alt=\"german\">");
+			$("#german").fadeOut();
+			$("#english").fadeIn();
+		} else {
+			languageMode=languageMode_de;
+			$("#language").html("<img src=\"images/en.png\" onclick=\"switchLanguage();\" alt=\"english\">");
+			$("#english").fadeOut();
+			$("#german").fadeIn();
+		}
+	
+	}
+
+	$("#language").html("<img src=\"images/en.png\" onclick=\"switchLanguage();\" alt=\"english\">");
+
+	$("#english").hide();
+//-->
+</script>
