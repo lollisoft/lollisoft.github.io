@@ -36,6 +36,7 @@
           <div class="c33r">
             <div class="subcr">
               <!-- Insert your subtemplate content here -->
+              <div id="language" class="float_right"></div>
             </div>
           </div>
         </div>
@@ -78,29 +79,54 @@
 
           <div id="col3_content" class="clearfix">
 <!-- Einfache Bannergestaltung ohne Javascript -->
-			<script type="text/javascript"><!--
+<script type="text/javascript"><!--
 
 (function () {
-
    
 })();
 
 
 //--></script>
-        
+<script type="text/javascript"><!--
+var languageMode=1;
+var languageMode_de=1;
+var languageMode_en=2;
+
+function switchLanguage() {
+
+	if (languageMode == languageMode_de) {
+		languageMode=languageMode_en;
+		$("#language").html("<img src=\"images/de.png\" onclick=\"switchLanguage();\" alt=\"german\">");
+		$("#german").fadeOut();
+		$("#english").fadeIn();
+	} else {
+		languageMode=languageMode_de;
+		$("#language").html("<img src=\"images/en.png\" onclick=\"switchLanguage();\" alt=\"english\">");
+		$("#english").fadeOut();
+		$("#german").fadeIn();
+	}
+	
+}
+
+
+//--></script>
+
+
 <script type="text/javascript"><!--
 		
-var originalHTMl = undefined;
-var timerID = undefined;
-var totalBanners = 6;
+var originalHTMl=undefined;
+var timerID=undefined;
+var totalBanners=6;
 
-var clickTeaser = "<p></p><h1 align=\"center\">Softwareentwicklung kostet <b>Zeit</b>. Haben Sie die?</h1><p></p>";
+
+
+var clickTeaser="<p></p><h1 align=\"center\">Softwareentwicklung kostet <b>Zeit</b>. Haben Sie die?</h1><p></p>";
 
 function ReplaceContentInContainer(id,content) {
-	var container = document.getElementById(id);
+	var container=document.getElementById(id);
 	
-	container.innerHTML = content;
-	container.onclick = function() {
+	container.innerHTML=content;
+	container.onclick=function() {
 		$("#main").html(originalHTMl);
         $("#col3_content").hide();
 		$("#" + id).fadeOut();
@@ -112,20 +138,20 @@ function ReplaceContentInContainer(id,content) {
 	};
 }
 (function () {
-var container = document.getElementById("click_banner");
-container.innerHTML = "<a href=\"javascript:ReplaceContentInContainer('example1div','Whew! You clicked!')\">Click me to replace the content in the container.</a>";
+var container=document.getElementById("click_banner");
+container.innerHTML="<a href=\"javascript:ReplaceContentInContainer('example1div','Whew! You clicked!')\">Click me to replace the content in the container.</a>";
 })();
-window.onload = function() {
+window.onload=function() {
 
 };
 
 //--></script>
 <script type="text/javascript"><!--
-var containerID = "introdiv";
-var number = 2;
-var timerPaused = 0;
+var containerID="introdiv";
+var number=2;
+var timerPaused=0;
 
-timerID = setInterval("CountdownTimer()",5000);
+timerID=setInterval("CountdownTimer()",5000);
 
 //ReplaceContentInContainer(containerID,getBanner(1));
 
@@ -208,17 +234,17 @@ function getLandingContents(number) {
             // Floating clock - no text while float
 			return "";
 		case 2:
-            clickTeaser = "<p></p><h1 align=\"center\">Softwareentwicklung kostet <b>Zeit</b>. Haben Sie die?</h1><p></p>";
+            clickTeaser="<p></p><h1 align=\"center\">Softwareentwicklung kostet <b>Zeit</b>. Haben Sie die?</h1><p></p>";
 			return getLandingTimeFact();
 		case 3:
 			return "";
 		case 4:
-            clickTeaser = "<p></p><h1 align=\"center\">Verbessern Sie die Softwarequalit&auml;t</h1><p></p>";
+            clickTeaser="<p></p><h1 align=\"center\">Verbessern Sie die Softwarequalit&auml;t</h1><p></p>";
 			return getLandingAutomationFact();
 		case 5:
 			return "";
 		case 6:
-            clickTeaser = "<p></p><h1 align=\"center\">Automatisieren Sie die Softwareentwicklung</h1><p></p>";
+            clickTeaser="<p></p><h1 align=\"center\">Automatisieren Sie die Softwareentwicklung</h1><p></p>";
 			return getLandingSystemFact();
 	}
 	return "";
@@ -230,35 +256,35 @@ function getBanner(number) {
 			return "<a class=\"photo1\" href=\"#\"><img src=\"http://t2.ftcdn.net/jpg/00/51/15/55/240_F_51155523_LE4ZATWsohMbXwIEfInfD9guAhgNq252.jpg\" alt=\"\" width=\"100%\"/></a><a class=\"photo2\" href=\"#\"><img src=\"http://t1.ftcdn.net/jpg/00/58/63/58/240_F_58635850_ThGavLxMPGehWgyO0ONwdM3dVuJZoJc8.jpg\" alt=\"\" width=\"100%\"/></a><a class=\"photo3\" href=\"#\"><img src=\"http://t2.ftcdn.net/jpg/00/64/19/63/240_F_64196361_3WQu7KPxghUyBPkKOR63yAkFOh5Rtbmm.jpg\" alt=\"\" width=\"100%\"/></a><a class=\"photo4\" href=\"#\"><img src=\"http://t2.ftcdn.net/jpg/00/65/40/05/240_F_65400544_D5HUP0KRoAAw0IiRxUYkSRENArmEkWAn.jpg\" alt=\"\" width=\"100%\"/></a><a class=\"photo5\" href=\"#\"><img src=\"http://t2.ftcdn.net/jpg/00/66/01/19/240_F_66011985_FH7BSg0TOiWPYXOcUQvtJzT4MHnXB38G.jpg\" alt=\"\" width=\"100%\"/></a>";
 		case 1:
             clearInterval(timerID);
-            timerID = setInterval("CountdownTimer()",5000);
+            timerID=setInterval("CountdownTimer()",5000);
 
 			$("#teaser").html("<p></p><h1 align=\"center\">Softwareentwicklung kostet <b>Zeit</b>. Haben Sie die?</h1><p></p>");
 
 			return "<div id=\"introdiv_col1\"><div id=\"introdiv_col1_content\"><a class=\"slide_out\" href=\"#\"><img   src=\"images/clock_5_before_12.png\" height=\"500px\"/></a></div></div><div id=\"introdiv_col3\">" + getLandingContents(number) + "</div>";
 		case 2:
             clearInterval(timerID);
-            timerID = setInterval("CountdownTimer()",120000); // Text soll gelesen werden können
+            timerID=setInterval("CountdownTimer()",120000); // Text soll gelesen werden können
 
 			$("#teaser").html("<p></p><h1 align=\"center\">Softwareentwicklung kostet <b>Zeit</b>. Haben Sie die?</h1><p></p>");
 
 			return "<div id=\"introdiv_col1\"><div id=\"introdiv_col1_content\"><a href=\"#\"><img class=\"float_left\" src=\"images/clock_5_before_12.png\" height=\"500px\"/></a></div></div><div id=\"introdiv_col3\">" + getLandingContents(number) + "</div>";
 		case 3:
             clearInterval(timerID);
-            timerID = setInterval("CountdownTimer()",5000);
+            timerID=setInterval("CountdownTimer()",5000);
 
 			$("#teaser").html("<p></p><h1 align=\"center\">Verbessern Sie die Softwarequalit&auml;t</h1><p></p>");
 			
 			return "<div id=\"introdiv_col1\"><div id=\"introdiv_col1_content\"><a class=\"slide_out\" href=\"#\"><img    src=\"images/quality_approved.png\" height=\"200px\"/></a></div></div><div id=\"introdiv_col3\">" + getLandingContents(number) + "</div>";
 		case 4:
             clearInterval(timerID);
-            timerID = setInterval("CountdownTimer()",120000); // Text soll gelesen werden können
+            timerID=setInterval("CountdownTimer()",120000); // Text soll gelesen werden können
 
 			$("#teaser").html("<p></p><h1 align=\"center\">Verbessern Sie die Softwarequalit&auml;t</h1><p></p>");
 			
 			return "<div id=\"introdiv_col1\"><div id=\"introdiv_col1_content\"><a href=\"#\"><img class=\"float_left\"  src=\"images/quality_approved.png\" height=\"200px\"/></a></div></div><div id=\"introdiv_col3\">" + getLandingContents(number) + "</div>";
 		case 5:
             clearInterval(timerID);
-            timerID = setInterval("CountdownTimer()",5000);
+            timerID=setInterval("CountdownTimer()",5000);
 
 			$("#teaser").html("<p></p><h1 align=\"center\">Automatisieren Sie die Softwareentwicklung</h1><p></p>");
 
@@ -268,7 +294,7 @@ function getBanner(number) {
 	// Abschluss der Banner Facts
 
 	clearInterval(timerID);
-    //timerID = setInterval("CountdownTimer()",60000); // Text soll gelesen werden können
+    //timerID=setInterval("CountdownTimer()",60000); // Text soll gelesen werden können
 
 	$("#teaser").html("<p></p><h1 align=\"center\">Automatisieren Sie die Softwareentwicklung</h1><p></p>");
 	return "<div id=\"introdiv_col1\"><div id=\"introdiv_col1_content\"><a  href=\"#\"><img class=\"float_left\"    src=\"images/VariousComputerTypes.png\" height=\"150px\"/></a></div></div><div id=\"introdiv_col3\">" + getLandingContents(number) + "</div>";
@@ -339,8 +365,8 @@ function CountdownTimer() {
 }
 //--></script>
       
-      
-      <div id="main">
+      <div id="german">
+<div id="main">
         <div id="col1">
           <div id="col1_content" class="clearfix">
             <!-- add your content here -->
@@ -358,7 +384,7 @@ function CountdownTimer() {
             <!-- add your content here -->
             <img class="float_right" src="images/quality_approved.png" alt="Anwendung als Screenshot mit Lineal abgemessen."/>
             <p>Wir erh&ouml;hen die <b>Qualität</b> Ihrerer Software. In von Hand erstelltem Code schleichen sich gerne Fehler ein. Wir machen eben alle welche.</p>
-            <p>Durch Wiederholung von systematischem Code k&ouml;nnen so unterschiedliche Fehler entstehen, obwohl man glaubt, das gleiche gemacht zu haben. Wenn man einen Fehler dann behoben hat, sind nicht alle weg - wenn man die Wiederholungen mittels Copy&Paste erstellt hat.</p>
+            <p>Durch Wiederholung von systematischem Code k&ouml;nnen so unterschiedliche Fehler entstehen, obwohl man glaubt, das gleiche gemacht zu haben. Wenn man einen Fehler dann behoben hat, sind nicht alle weg - wenn man die Wiederholungen mittels Copy&amp;Paste erstellt hat.</p>
             <p>Wird der Code dagegen aus einer Vorlage erstellt, brauchen Sie den Fehler nur in der Vorlage zu beheben und drücken einen Knopf!</p>
           </div>
         </div>
@@ -368,7 +394,6 @@ function CountdownTimer() {
 <div id="example1div"></div>
 <div id="click_banner"></div>
 -->
-
           	<noscript>
 			<iframe name="Framename" src="banner/index/banner01.html" marginwidth="0" marginheight="0" frameborder="0" scrolling="no"></iframe> 
 			</noscript>
@@ -380,17 +405,66 @@ function CountdownTimer() {
             <p>Hierbei stelle ich den Mock-Up in den Vordergrund, da dies bereits links dargestellt ist und eine vergleichsweise gut funktionierende Anwendung darstellt.</p>
             <p>Die &uuml;blichen Mock Verfahren basieren beispielsweise auf Wireframes, Klick Dummies, oder Folienpr&auml;sentationen von zusammengeschobenen Designs, oder Montagen aus Ihrer Entwicklungsumgebung.</p>
             <p>Software soll aber so fr&uuml;h wie m&ouml;glich funktionieren! Wieso malen dann viele erst ein Bild oder erstellen einen Mock? Das Problem ist nicht der Mock, sondern die meist fehlende Weiterverarbeitbarkeit dieses Mocks. K&ouml;nnen Sie Ihre weiterverarbeiten?</p>
-            <p>Wenn Sie Ihre Mockups weiterverarbeiten k&ouml;nnen, gratuliere ich Ihnen! Wenn nicht, dann werden Ihnen folgende M&ouml;glichkeiten gefallen: Achten Sie darauf, dass Ihre Mockups aus XML Dateien bestehen, die allenfalls Bilder referenzieren. Verwenden Sie in Ihrem Mock schon richtige Bezeichner für die darzustellenden Inhalte.</p>
+            <p>Wenn Sie Ihre Mockups weiterverarbeiten k&ouml;nnen, gratuliere ich Ihnen! Wenn nicht, dann werden Ihnen folgende M&ouml;glichkeiten gefallen: Achten Sie darauf, dass Ihre Mockups aus XML Dateien bestehen und wenn Bilder verwendet werden, nur referenzierte sind praktikabel. Verwenden Sie in Ihrem Mock schon richtige Bezeichner für die darzustellenden Inhalte.</p>
             <p>Diese Informationen reichen f&uuml;r die erste Etappe aus. Zusammen mit den Informationen, wie Name der Maske, Ort / Pfad in Ihrem Projekt und den Feldern, die ordentlich benannt sind, sowie den Typen der Felder (Zahl, Text, W&auml;hrung,...) steht einer Weiterverarbeitung nichts im Weg.</p>
-<!--
-            <p>Haben Sie sich mit dieser Tatsache vertraut gemacht, k&ouml;nnen Sie erste Prototypen Ihrer Ideen sehr schnell umsetzen.</p>
-            <p>Diese sind aus einem Modell erstellt, das nur das Wesentliche enth&auml;lt. Ein Generator erweitert Ihr Modell gem&auml; Ihrer Modellierungsvorschrift um Artefakte, die dann zu solch einer L&ouml;sung f&uuml;hren k&ouml;nnen.</p>
--->
           </div>
           <!-- IE Column Clearing -->
           <div id="ie_clearing"> &#160; </div>
-        </div>
+</div>
       </div>
+
+      <div id="english">
+<div id="main">
+         <div id="col1">
+           <div id="col1_content" class="clearfix">
+             <!-- Add your content here -->
+             <img class="float_left" src="images/clock_5_before_12.png" alt="hourglass" />
+             <p>
+             Software development costs <b>time</b>. Do you have them? If not, read on. <br/>
+			 Expenses you require, arises to parts of the following disciplines: Planning, analysis, design, coding, and validation and verification. Reduce your time where it goes.</p>
+             <p>Software is written in most enterprises by hand, since many are not aware of the fact that there is another way. Many parts of a software are systematically similar and therefore suitable for automatic code generation. </p>
+             <p>Use this possibility!</p>
+           </div>
+         </div>
+         <div id="col2">
+           <div id="col2_content" class="clearfix">
+             <!-- Add your content here -->
+             <img class="float_right" src="images/quality_approved.png" alt="application as a screenshot measured with a ruler." />
+             <p>We increase the <b>quality</b> of your software. In manually created code there is likely simply to sneak a mistake. We make up all that.</p>
+             <p>By the repetition of systematic code different errors may occur, although it is believed to have done the same. If you have then fixed a bug, not all gone - if you've created the repetitions using copy &amp; paste programming.</p>.
+             <p>If the code has created from a template, you need only the error in the template to fix and push a button! </p>
+           </div>
+         </div>
+<!--
+<div id="introdiv"> </div>
+-->
+         <div id="col3">
+<!--
+<div id="example1div"> </div>
+<div id="click_banner"> </div>
+-->
+           <noscript>
+<iframe name="frame name" src="banner/index/banner01.html" marginwidth="0" marginheight="0" frameborder="0" scrolling="no"> </iframe>
+</noscript>
+             <!-- Add your content here -->
+             <p>Model-driven engineering is described in various forums and publications as a promising variant how to save time and increase quality. Here is a way to show how you can reach any part thereof.</p>.
+             <p>Starting a project, you first get your customers' needs, or they identify with a project together. All planning is expected as finished in the actual scenario, as done before.
+			 The process model requires more or less model-driven software development, as results in a software based on a model.</p>
+             <img class="float_left" src="images/prototype.png" alt="Sample" />
+             <p>In the <b>analysis phase</b> software development includes the following topics: evaluation, mock-up, process analysis / process model, system analysis, structured and object-oriented analysis</p>
+             <p>Here, I present the mock-up in the foreground, as this is already shown on the left and is a relatively well-functioning application.</p>
+             <p>The usual mocking methods are based, for example on wireframes, click dummies, or presentations of designs moved together, or montages from your development environment.</p>
+             <p>Software should work as fast as possible! Why then many paint only a picture or create a mock? The problem is not the mock, but mostly the lack of further processing of those mocks. Can you further process these?</p>
+             <p>If your mockups can further be processed I will congratulate! If not, then you have the following possibilities: Make sure that your mockups are stored in XML files and if images are used, only referenced ones are practical. Use already in your mock right identifiers for the displayed content.</p>
+             <p>This information is sufficient for navigation use from the first stage. Together with the information, such as name of the form, location / path in your project and the fields are properly named, as well as the types of fields (number, text, currency, ...) is a finishing nothing in the way.</p>
+           </div>
+           <!-- IE Column Clearing -->
+           <div id="ie_clearing"> </div>
+</div>
+       </div>
+      </div>
+	         </div>
+
       <!-- begin: #footer -->
       <div id="footer">
 A <a href="http://www.yaml.de/">YAML</a> Layout. &copy; Lothar Behrens
@@ -401,6 +475,10 @@ A <a href="http://www.yaml.de/">YAML</a> Layout. &copy; Lothar Behrens
 </html>
 
 <script type="text/javascript"><!--
+	$("#language").html("<img src=\"images/en.png\" onclick=\"switchLanguage();\" alt=\"english\">");
+
+
+
     $("#col1").hide();
     $("#col2").hide();
     $("#col3").hide();
