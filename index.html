@@ -95,15 +95,20 @@
 						var languageMode=1;
 						var languageMode_de=1;
 						var languageMode_en=2;
+						var introStopped=0;
 						
 						function switchLanguage() {
 							
 							if (languageMode == languageMode_de) {
+								$("#intro_navigation").html("");
 								languageMode=languageMode_en;
 								$("#language").html("<img src=\"images/de.png\" onclick=\"switchLanguage();\" alt=\"german\">");
 								$("#german").fadeOut();
 								$("#english").fadeIn();
 							} else {
+								if (introStopped==0) {
+								$("#intro_navigation").html("<img src=\"images/PreviousIntro.png\" onclick=\"setPreviousBanner();\" title=\"Letztes Intro\" alt=\"previous intro\"><img src=\"images/NextIntro.png\" onclick=\"setNextBanner();\" title=\"N&auml;chstes Intro\" alt=\"next intro\"><img src=\"images/StopIntro.png\" onclick=\"resetIntro(containerID);\" title=\"Intro beenden\" alt=\"stop intro\">");
+								}
 								languageMode=languageMode_de;
 								$("#language").html("<img src=\"images/en.png\" onclick=\"switchLanguage();\" alt=\"english\">");
 								$("#english").fadeOut();
@@ -139,6 +144,7 @@
 						}
 						
 						var resetIntro = function(id) {
+								introStopped=1;
 								$("#main").html(originalHTMl);
 								$("#col3_content").hide();
 								$("#" + id).fadeOut();
@@ -157,6 +163,7 @@
 							
 							container.innerHTML=content;
 							container.onclick=function() {
+								introStopped=1;
 								$("#main").html(originalHTMl);
 								$("#col3_content").hide();
 								$("#" + id).fadeOut();
