@@ -1,0 +1,31 @@
+{
+    "$feed-origin": "http://freshcode.club/",
+    "$feed-license": "CC-BY-SA 3.0",
+    "name": "lbdmf",
+    "title": "Distributed Multiplatform Framework",
+    "description": "Distributed Multiplatform Framework is a component-based programming framework using XML (or currently a hardcoded variant) as the repository. The samples are implemented either in console or wxWidgets. This shows the independence of the GUI or UI. The screenshot shows a generated application using DevExpress.",
+    "homepage": "http://lbdmf.sourceforge.net/",
+    "license": "GNU LGPL",
+    "tags": "code-generator, database, front-ends, software-development, library, application-framework, devexpress-codegenerator",
+    "image": "http://lbdmf.sourceforge.net/index.php?module=uploads&func=download&fileId=35",
+    "submitter": "Lothar Behrens",
+    "urls": [],
+    "releases": [
+        {
+            "version": "1.0.4.3-final",
+            "state": "stable",
+            "scope": "major feature",
+            "changes": "This release contains new features regarding table parameters. They are used for permission mechanisms at first. But they are able to be used for other stuff related to tables.\n\nAlso there is a new DevExpress based code generator. It contains a STS server, STS management application and uses these for single sign on at the different services.\n\nPlease feel free to report any issues and ask questions",
+            "download": "http://sourceforge.net/projects/lbdmf/files/lbdmf/lbDMF-1.0.4.3-final/",
+            "published": "2014-12-20T09:08:08+0000"
+        },
+        {
+            "version": "1.0.4.2-final",
+            "state": "stable",
+            "scope": "major feature",
+            "changes": "This release added custom fields to be modeled but not as functional elements, and code for better SQLite logging. Initial error feedback and model validation was added. A new 'StsManagement' sample UML model was added. This application represents the database model the CAB DevExpress code generator utilizes for the STS authentication feature. It can be used to create the respective management application using the same template. Several bugs were fixed.",
+            "download": "http://sourceforge.net/projects/lbdmf/files/lbdmf/lbDMF-1.0.4.2-final/",
+            "published": "2014-06-29T17:25:51+0000"
+        }
+    ]
+}
