@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<title>Von der Idee schnell zur Software</title>
+<!-- add your meta tags here -->
+
+<link href="css/my_layout.css" rel="stylesheet" type="text/css" />
+<!--[if lte IE 7]>
+<link href="css/patches/patch_my_layout.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+</head>
+<body>
+  <div class="page_margins">
+    <div class="page">
+      <div id="header">
+        <div id="pagetitle">Von der Idee schnell zur Software</div>
+        <div id="topnav">
+          <!-- start: skip link navigation -->
+          <a class="skip" title="skip link" href="#navigation">Skip to the navigation</a><span class="hideme">.</span>
+          <a class="skip" title="skip link" href="#content">Skip to the content</a><span class="hideme">.</span>
+          <!-- end: skip link navigation --><a href="https://twitter.com/lollisoft">Kontakt (via Twitter)</a> | <a href="impressum.html">Impressum</a> | <a href="datenschutz.html">Datenschutz</a>
+        </div>
+        <div class="subcolumns">
+          <div class="c33l">
+            <div class="subcl">
+              <!-- Insert your subtemplate content here -->
+              <img src="images/lollisoft_logo.png"/>
+            </div>
+          </div>
+          <div class="c33">
+            <div class="subc">
+              <!-- Insert your subtemplate content here -->
+            </div>
+          </div>
+          <div class="c33r">
+            <div class="subcr">
+              <!-- Insert your subtemplate content here -->
+              <div id="language" class="float_right"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="nav">
+        <!-- skiplink anchor: navigation -->
+        <a id="navigation" name="navigation"></a>
+        <div class="hlist">
+          <!-- main navigation: horizontal list -->
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="product2.html">CAB DevExpress Codegenerator Compilation</a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="teaser">
+      <p></p>
+        <h1 align="center">Danke, dass Sie dieses Produkt installieren!</h1>
+      <p></p>
+      </div>
+		
+		
+		
+				<div id="german">
+      <div id="main">
+        <div id="col1">
+          <div id="col1_content" class="clearfix">
+            <!-- add your content here -->
+          </div>
+        </div>
+        <div id="col3">
+          <div id="col3_content" class="clearfix">
+            <!-- add your content here -->
+             <p>Hier finden Sie in Zukunft weitere Informationen.</p>
+            </div>
+          </div>
+          <!-- IE Column Clearing -->
+          <div id="ie_clearing">&#160; </div>
+        </div>
+				</div>
+				
+				<div id="english">
+<div id="main">
+         <div id="col1">
+           <div id="col1_content" class="clearfix">
+             <!-- Add your content here-->
+           </div>
+         </div>
+         <div id="col3">
+           <div id="col3_content" class="clearfix">
+             <!-- Add your content here-->
+             <p>Here you will find additional information.</p>
+             </div>
+           </div>
+           <!-- IE Column Clearing-->
+           <div id="ie_clearing"></div>
+         </div>
+		 				</div>
+		
+		
+    	  <!-- begin: #footer -->
+    	<div id="footer">
+			A <a href="http://www.yaml.de/">YAML</a>Layout. &copy; Lothar Behrens
+    	  </div>
+	  </div>
+    </div>
+  </div>
+</body>
+</html>
+
+<script type="text/javascript" src="js/lib/jquery-1.6.1.min.js"></script>
+
+<script type="text/javascript"><!--
+	var languageMode=1;
+	var languageMode_de=1;
+	var languageMode_en=2;
+
+	var switchLanguage=function() {
+
+		if (languageMode == languageMode_de) {
+			languageMode=languageMode_en;
+			$("#language").html("<img src=\"images/de.png\" onclick=\"switchLanguage();\" alt=\"german\">");
+			$("#german").fadeOut();
+			$("#english").fadeIn();
+		} else {
+			languageMode=languageMode_de;
+			$("#language").html("<img src=\"images/en.png\" onclick=\"switchLanguage();\" alt=\"english\">");
+			$("#english").fadeOut();
+			$("#german").fadeIn();
+		}
+	
+	}
+
+	$("#language").html("<img src=\"images/en.png\" onclick=\"switchLanguage();\" alt=\"english\">");
+
+	$("#english").hide();
+//-->
+</script>
