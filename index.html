@@ -124,6 +124,7 @@
 					<script type="text/javascript"><!--
 						
 						var originalHTMl=undefined;
+						var actionHTMl=undefined;
 						var timerID=undefined;
 						var minBanner=2;
 						var totalBanners=6;
@@ -149,9 +150,9 @@
 								$("#col3_content").hide();
 								$("#" + id).fadeOut();
 								window.clearTimeout(timerID);
-								$("#col1").fadeIn(3000);
-								$("#col2").fadeIn(3000);
-								$("#col3").fadeIn(6000);
+								$("#col1").fadeIn(1000);
+								$("#col2").fadeIn(1000);
+								$("#col3").fadeIn(1000);
 								$("#teaser").html(clickTeaser);
 								$("#intro_navigation").html("");
 						}
@@ -164,7 +165,7 @@
 							container.innerHTML=content;
 							container.onclick=function() {
 								introStopped=1;
-								$("#main").html(originalHTMl);
+								$("#main").html(actionHTMl);
 								$("#col3_content").hide();
 								$("#" + id).fadeOut();
 								window.clearTimeout(timerID);
@@ -192,8 +193,7 @@
 						
 						function getLandingTimeFact() {
 							return "<div id=\"landing_content\" class=\"clearfix\" align=\"top\">" +
-							"Heute ist der Konkurrenzdruck hoch. Zeit spielt dabei eine mitunter ausschlaggebende Rolle. Profitieren Sie von der Zeitersparnis." +
-							"<br>" +
+							"<p>Heute ist der Konkurrenzdruck hoch. Zeit spielt dabei eine mitunter ausschlaggebende Rolle. Profitieren Sie von der Zeitersparnis." +
 							"<br>" +
 							"Ein beachtlicher Anteil von bis zu 80% der Software kann maschinell hergestellt werden, da diese Anteile wiederholenden Charakter haben. " +
 							"Ein Ansatz bei sich wiederholenden Aufgaben kennen Sie sicherlich aus der Zeit der Industrialisierung! Fabriken und Dinge vom Band. " +
@@ -207,14 +207,15 @@
 							"Eine Anwendung wie diese ist in sehr kurzer Zeit erstellbar. " +
 							"Der Codegenerator enth&auml;lt etwa 250 Dateien. Der generierte Code diesr Anwendung besteht aus etwa 1000 Dateien. Der Generator wurde " +
 							"in etwa einem Monat entwickelt, kann aber nun in diversen Projekten von gleichartigen Anwendungen herangezogen werden. Sie sparen um so " +
-							"mehr Zeit je &ouml;fter Sie den Generator nutzen."
-							
+							"mehr Zeit je &ouml;fter Sie den Generator nutzen." +
+							"</p>" +
+							"<p><b>Schauen Sie sich doch gleich eine Anwendung live an!</b></p>" +
 							"</div>";
 						}
 						
 						function getLandingAutomationFact() {
 							return "<div id=\"landing_content\" class=\"clearfix\" align=\"top\">" +
-							"Programmcode, der automatisiert erstellt wird, ist f&uuml;r immer fehlerfrei, sobald er ohne Fehler generiert wird." +
+							"<p>Programmcode, der automatisiert erstellt wird, ist f&uuml;r immer fehlerfrei, sobald er ohne Fehler generiert wird." +
 							"<br>" +
 							"<br>" +
 							"Wie in einer Fabrik durch die Automatisierung die Qualit&auml;t immer verbessert wird, kann die Codequalit&auml;t nach und nach verbessert werden. " +
@@ -233,12 +234,14 @@
 							"verstanden werden, die verschiedene Aspekte aktivieren. Hierunter fallen dann auch die Auswahl und validierung gew&auml;hlter Einstellungen. " +
 							"Sie haben schneller besseren Code erstellt. Fl&uuml;chtigkeitsfehler sind kein Zeitfaktor mehr, da Sie nicht mehr variieren." +
 							"<br>" +
+							"</p>" +
+							"<p><b>Wie das funktioniert, erfahren Sie hier...</b></p>" +
 							"</div>";
 						}
 						
 						function getLandingSystemFact() {
 							return "<div id=\"landing_content\" class=\"clearfix\" align=\"top\">" +
-							"Die Wahl des Systems spielt keine Rolle und sollte es auch nicht. Heute stellt sich nicht mehr die Frage nach dem System, sondern nach welchen Systemen." +
+							"<p>Die Wahl des Systems spielt keine Rolle und sollte es auch nicht. Heute stellt sich nicht mehr die Frage nach dem System, sondern nach welchen Systemen." +
 							"<br>" +
 							"<br>" +
 							"Es ist sehr aufw&auml;ndig, Software zu entwickeln. Erstrecht wenn diese f&uuml;r mehrere Systeme gedacht ist. Wenn Sie hier von Hand herangehen, haben wir ein Argument, dies zu ändern. " +
@@ -258,6 +261,9 @@
 							"<br>" +
 							"<br>" +
 							"Mit der Auswahl des Codegererators entfallen diese Einschr&auml;nkungen zumindest teilweise." +
+							"<br>" +
+							"</p>" +
+							"<p><b>Sie kostet dies nichts! Fangen Sie einfach mal damit an...</b></p>" +
 							"</div>";
 						}
 						
@@ -266,19 +272,25 @@
 								case 0:
 								return "";
 								case 1:
+								actionHTMl="<script language='javascript'>window.location = 'http://www.lollisoft.de/product3.html';</script>";
 								// Floating clock - no text while float
 								return "";
 								case 2:
+								actionHTMl="<script language='javascript'>window.location = 'http://www.lollisoft.de/product3.html';</script>";
 								clickTeaser="<p></p><h1 align=\"center\">Softwareentwicklung kostet <b>Zeit</b>. Haben Sie die?</h1><p></p>";
 								return getLandingTimeFact();
 								case 3:
+								actionHTMl="<script language='javascript'>window.location = 'http://www.lollisoft.de/product2.html';</script>";
 								return "";
 								case 4:
+								actionHTMl="<script language='javascript'>window.location = 'http://www.lollisoft.de/product2.html';</script>";
 								clickTeaser="<p></p><h1 align=\"center\">Verbessern Sie die Softwarequalit&auml;t</h1><p></p>";
 								return getLandingAutomationFact();
 								case 5:
+								actionHTMl="<script language='javascript'>window.location = 'http://www.lollisoft.de/product1.html';</script>";
 								return "";
 								case 6:
+								actionHTMl="<script language='javascript'>window.location = 'http://www.lollisoft.de/product1.html';</script>";
 								clickTeaser="<p></p><h1 align=\"center\">Automatisieren Sie die Softwareentwicklung</h1><p></p>";
 								return getLandingSystemFact();
 							}

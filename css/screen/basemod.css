@@ -57,8 +57,8 @@
   /*
   #main { margin: 10px 0; background: #fff; }
   */
-  #main { margin: 10px 0; min-height:900px; background: #f9f8f8; } /* Tint color to background */
-  #main_nomargin { min-height:900px; background: #f9f8f8; } /* Tint color to background */
+  #main { margin: 10px 0; min-height:1400px; background: #f9f8f8; } /* Tint color to background */
+  #main_nomargin { min-height:1400px; background: #f9f8f8; } /* Tint color to background */
 
   #footer { bottom: 0px; padding: 10px 20px; color:#666; background: #efeeee; border-top: 5px #efefef solid; }
 
