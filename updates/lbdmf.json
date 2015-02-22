@@ -12,6 +12,14 @@
     "urls": [],
     "releases": [
         {
+            "version": "1.0.4.4-final",
+            "state": "stable",
+            "scope": "major feature",
+            "changes": "This release includes a new update check plugin. You will get informed about new releases.\n\nThe CAB DevExpress code generator compilation includes minor changes.\n\nPlease feel free to report any issues and ask questions",
+            "download": "http://sourceforge.net/projects/lbdmf/files/lbdmf/lbDMF-1.0.4.4-final/",
+            "published": "2015-01-22T07:00:33+0000"
+        },
+        {
             "version": "1.0.4.3-final",
             "state": "stable",
             "scope": "major feature",
