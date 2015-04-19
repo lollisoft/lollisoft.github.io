@@ -12,6 +12,14 @@
     "urls": [],
     "releases": [
         {
+            "version": "1.1.0",
+            "state": "stable",
+            "scope": "major feature",
+            "changes": "There is a new plugin that enables using domain specific languages. It uses Antlr3 based \nlanguage. A new code generator compilation has been made available. This new template \ngenerates code targeting the Syncfusion Essential Studio. Added initial logging \nmechanism to see access to the services that are generated in the CAB DevExpress \nGenerator template simply to see where the users come from. The logging mechanism still \nhas to be improved. A bugfix has been made regarding handling of datetime fields. They \nwere not handled as strings but required to. Trigger generation template code has been \nfixed by reversing the direction. The trigger complained about referential integrity, \nbut in the wrong direction. The few changes and fixes let me made a decision to make a \nminor release change. Also a completely new model input will be made available using \ntextual DSL's.",
+            "download": "https://sourceforge.net/projects/lbdmf/files/lbdmf/lbDMF-1.1.0/",
+            "published": "2015-04-19T14:55:09+0000"
+        },
+        {
             "version": "1.0.4.4-final",
             "state": "stable",
             "scope": "major feature",
