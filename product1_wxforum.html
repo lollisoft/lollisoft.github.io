@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<title>Von der Idee schnell zur Software</title>
+<!-- add your meta tags here -->
+
+<link href="css/my_layout.css" rel="stylesheet" type="text/css" />
+<!--[if lte IE 7]>
+<link href="css/patches/patch_my_layout.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+</head>
+<body>
+  <div class="page_margins">
+    <div class="page">
+      <div id="header">
+        <div id="pagetitle">Von der Idee schnell zur Software</div>
+        <div id="topnav">
+          <!-- start: skip link navigation -->
+          <a class="skip" title="skip link" href="#navigation">Skip to the navigation</a><span class="hideme">.</span>
+          <a class="skip" title="skip link" href="#content">Skip to the content</a><span class="hideme">.</span>
+          <!-- end: skip link navigation --><a href="https://twitter.com/lollisoft">Kontakt (via Twitter)</a> | <a href="impressum.html">Impressum</a> | <a href="datenschutz.html">Datenschutz</a>
+        </div>
+        <div class="subcolumns">
+          <div class="c33l">
+            <div class="subcl">
+              <!-- Insert your subtemplate content here -->
+              <img src="images/lollisoft_logo.png"/>
+            </div>
+          </div>
+          <div class="c33">
+            <div class="subc">
+              <!-- Insert your subtemplate content here -->
+            </div>
+          </div>
+          <div class="c33r">
+            <div class="subcr">
+              <!-- Insert your subtemplate content here -->
+              <div id="language" class="float_right"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="nav">
+        <!-- skiplink anchor: navigation -->
+        <a id="navigation" name="navigation"></a>
+        <div class="hlist">
+          <!-- main navigation: horizontal list -->
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="products.html">Produkte</a></li>
+            <li><a href="services.html">Dienstleistungen</a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="teaser">
+      <p></p>
+        <h1 align="center">Was ist Distributed Multiplatform Framework?</h1>
+      <p></p>
+      </div>
+		
+		
+		
+				<div id="german">
+      <div id="main">
+        <div id="col1">
+          <div id="col1_content" class="clearfix">
+            <!-- add your content here -->
+				  <img class="float_left" src="images/stickman_1.png" alt="Sample"/>
+            <p>Haben Sie nicht auch eine Vorstellung von dem was Sie erreichen wollen?</p>
+				  <img class="float_left" src="images/stickman_2.png" alt="Sample"/>
+            <p>Nur eine grobe Vorstellung von Ihrer Idee und keine Zeit f&uuml;r eine Aufw&auml;ndige Entwicklung?</p>
+				  <img class="float_left" src="images/stickman_3.png" alt="Sample"/>
+            <p>Schnell mal eine erste L&ouml;sung in Sicht? Nein, Sie programmieren alles noch von hand?</p>
+				  <img class="float_left" src="images/stickman_4.png" alt="Sample"/>
+            <p>Das kann nicht sein, denn es gibt f&uuml;r alles eine Lösung!</p>
+            <p><a href="https://sourceforge.net/projects/lbdmf/files/latest/download" rel="nofollow"><img alt="Download DMF: Distributed Multiplatform Framework" src="https://a.fsdn.com/con/app/sf-download-button"></a></p>
+          </div>
+        </div>
+        <div id="col3">
+          <div id="col3_content" class="clearfix">
+            <!-- add your content here -->
+                  <p>Dieses Framework ist gedacht f&uuml;r die schnelle Entwicklung von Datengetriebenen Anwendungen. Unter diese fallen Business Anwendungen, welche wenige bis sehr viele verschiedene Daten speichern k&ouml;nnen und bearbeiten lassen. Das in der Folge dargestellte Szenario ist aus unserer Entwicklung und stellt ein reales Feature dar. Es geht um einen anfangs von Hand erstellten Service, der nun eine Verwaltungsoberfl&auml;che bekommen soll.</p>
+
+				  <img class="float_left" src="images/stickman_5.png" alt="Sample"/>
+                  <p>Legen wir los. Ein einfacher Authentication Service soll um eine Management Oberfl&auml;che erweitert werden. Sie sehen ein UML Modell als Grundlage f&uuml;r die folgenden Anforderungen:</p>
+				  <img class="float_left" src="images/StsManagement.png" alt="Sample"/>
+				  <p><b>Bisherige Anforderungen an das System:</b></p>
+				  
+				  <p>Ein Service nutzer soll sich mittels eines zentralen Authentication Services anmelden k&ouml;nnen. Verschiedene Services sollen mit einem erstellten Token zugreifbar sein.</p>
+				  
+				  <p>Ein Token ist ein Ersatz für eine Anmeldung an den eigentlichen Services. Diese sind nicht an den &uuml;blichen Benutzernamen mit einem Passwort interessiert, sondern an einem Token, das nach einer gewissen Zeit (5 Minuten) abl&auml;uft.</p>
+				  
+				  <p><b>Neue Anforderungen:</b></p>
+
+				  <p>Eine Management Software soll die Verwaltung des Authentication Services vereinfachen. Die bisherige L&ouml;sung bestand noch darin, die Daten direkt in den Tabellen zu bearbeiten.</p>
+				  
+				  <p><b>Istzustand des Systems:</b></p>
+
+				  <p>Da der Service selbst schon in den Grundz&uuml;gen entwickelt wurde, hatte dieser schon eine Tabelle, die f&uuml;r eine Anmeldung verwendet wurde. Eine Erweiterung um die restlichen Tabellen ist notwendig, aber es wird auch eine Anwendung ben&ouml;tigt, welche das Anlegen und Verwalten von Benutzern erm&ouml;glichen soll.</p>
+
+				  <p>Der Prototyper kann f&uuml;r diese Aufgabe herangezogen werden, denn dieser ist in der Lage Code zu generieren um der Management Anwendung Leben einzuhauchen. Es ist auch absicht, diese zuerst zu erstellen und nicht den Authentication Service manuell um die ben&ouml;tigten Tabellen zu erweitern.</p>
+                  
+                  <p>Aus dem Generat der Management Anwendung werden die restlichen Tabellen herauskopiert und in den Authentication Service integriert. Der verbleibende Code im Service wird dann umgebaut, sodass die Management Anwendung integriert werden kann.</p>
+                  
+                  <p><b>Fazit:</b></p>
+                  
+				  <img class="float_left" src="images/stickman_6.png" alt="Sample"/>
+
+                  <p>Die Management Anwendung wurde ausgehend von einem UML Modell entwickelt. Diese wurde dann auch komplett automatisch generiert. Teile des Generates wurden dann in den Service &uuml;bernommen um eine Integration zu schaffen.</p>
+
+                  <p>Dies zeigt, dass zwar nicht alle Teile einer Anwendung Modelliert werden k&ouml;nnen, aber ein betr&auml;chtlicher Teil schon. Auch wenn der Authentication Service kein Kandidat f&uuml;r eine Modellgertiebene Software Entwicklung zu sein scheint, war hier ein Teil machbar, indem in der richtigen Reihenfolge gearbeitet wurde.</p>
+
+                  <p><b>Weitere Bilder:</b></p>
+
+				  <img class="float_left" src="images/stickman_7.png" alt="Sample"/>
+
+                  <p>Hier sehen Sie die StsManagement Anwendung, wie Sie tatsächlich genannt wird und in einem entsprechendem UML Modell existiert:</p>
+
+				  <img class="float_left" src="images/StsManagementApp.png" width="320px" alt="Sample"/>
+
+                  <p>Es sind Zertifikate f&uuml;r zwei Services registriert, die durch den STS Service f&uuml;r die eingerichteten Nutzer Accounts verf&uuml;gbar gemnacht wurden. Beide Anwendungen, der STS Service und die Stsmanagement Anwendung sind mittels eines Codegenerator Templates erstellt worden. Der Screenshot ist in einer FullHD Aufl&ouml;sung erstellt worden und kann dementsprechend vergr&ouml;&szlig;ert werden.</p>
+
+                  <p>Weiter wird pro Anwendung der entsprechende Service generiert, auf den durch die Anwendung zugegriffen wird.</p>
+
+                  <p>Ein STS Service ist ein Security Token Service, welcher oben genannte Tokens ausstellt, nachdem sich ein Benutzer erfolgreich bei diesem Authentifiziert hat.</p>
+            </div>
+          </div>
+          <!-- IE Column Clearing -->
+          <div id="ie_clearing">&#160; </div>
+        </div>
+				</div>
+				
+				<div id="english">
+<div id="main">
+         <div id="col1">
+           <div id="col1_content" class="clearfix">
+             <!-- Add your content here-->
+<img class="float_left" src="images/stickman_1.png" alt="Sample" />
+             <p>Do you not also have an idea of what you want to achieve?</p>
+<img class="float_left" src="images/stickman_2.png" alt="Sample" />
+             <p>Only a rough idea of your idea and no time for an expensive development?</p>
+<img class="float_left" src="images/stickman_3.png" alt="Sample" />
+             <p>Just in time any solution in sight? No, you still programming everything manually?</p>
+<img class="float_left" src="images/stickman_4.png" alt="Sample" />
+             <p>This is unexceptable, because there is a solution for everything!</p>
+             <p><a href="https://sourceforge.net/projects/lbdmf/files/latest/download" rel="nofollow"><img alt="Download DMF: Distributed Multiplatform Framework" src="https://a.fsdn.com/con/app/sf-download-button"></a></p>
+           </div>
+         </div>
+         <div id="col3">
+           <div id="col3_content" class="clearfix">
+             <!-- Add your content here-->
+                   <p>This framework is intended for the rapid development of data-driven applications. Under this fall business applications which store a few to very many different data and can be edited. The scenario depicted in the sequence is from our development and represents a real feature It's about a first hand-written service, now will get a management application.</p>
+
+<img class="float_left" src="images/stickman_5.png" alt="Sample" />
+                   <p>Lets start. The authentication service should be extended by a management software. You will see a UML model as a basis for the following requirements:</p>
+<img class="float_left" src="images/StsManagement.png" alt="Sample" />
+<p><b>Previous system requirements:</b></p>
+
+<p>A service user should be able to register through a centralized authentication service. Various services will be accessible with a generated token.</p>
+
+<p>A token is a substitute for logging on to the actual services. These services are not interested in the usual user name and password, but rather on a token. That will expire after a certain time (5 minutes).</p>
+
+<p><b>New Requirements:</b></p>
+
+<p>A management software to simplify the management of the Authentication Services. The former solution was still to edit the data directly in the tables.</p>
+
+<p><b>Actual state of the system:</b></p>
+
+<p>As the service itself was already developed with basic features it had a table that has been used to enable user login. An extension to the remaining tables is necessary, but also an application is required that enables create and manage users.</p>
+
+<p>The prototyper can be used for this task, because it is able to generate code for the management application to become life. It is also intentional, to create this application first and do not manually extend the authentication service, to extend preferential tables.</p>
+                  
+<p>The remaining tables are copied and integrated from the generated code of the management application into the authentication service. The remaining code in the service will be adjusted to accommodate the management application can be integrated.</p>
+                  
+<p><b>Conclusion:</b></p>
+                  
+<img class="float_left" src="images/stickman_6.png" alt="Sample" />
+
+<p>The management application was developed from a UML model. This was also generated completely automatically. Parts of the generated code were then taken into the authentication service to integrate it.</p>
+
+<p>This shows that not all parts of an application are modeled, but yet a notable part. Even if the authentication service seems not to be a candidate for model driven software development, a part was feasible by carrying it out in the correct order.</p>
+
+<p><b>Other Pictures:</b></p>
+
+<img class="float_left" src="images/stickman_7.png" alt="Sample" />
+
+<p>Here you can see the StsManagement application, as it actually get called and exists in a corresponding UML model:</p>
+
+<img class="float_left" src="images/StsManagementApp.png" width="320px" alt="Sample" />
+
+<p>There are registered two certificates for two services that are made available by the STS service for user accounts. Both of these applications, the STS service and Stsmanagement application have been created by a code generator template. The screenshot was taken in a FullHD resolution and is accordingly enlargeable.</p>
+
+<p>Next the backend services are generated per application, the corresponding service is accessed by the application.</p>
+
+<p>An STS Service is a security token service, which above tokens issued after a user has successfully authenticated with.</p>
+             </div>
+           </div>
+           <!-- IE Column Clearing-->
+           <div id="ie_clearing"></div>
+         </div>
+		 				</div>
+		
+		
+    	  <!-- begin: #footer -->
+    	<div id="footer">
+			A <a href="http://www.yaml.de/">YAML</a>Layout. &copy; Lothar Behrens
+    	  </div>
+	  </div>
+    </div>
+  </div>
+</body>
+</html>
+
+<script type="text/javascript" src="js/lib/jquery-1.6.1.min.js"></script>
+
+<script type="text/javascript"><!--
+	var languageMode=1;
+	var languageMode_de=1;
+	var languageMode_en=2;
+
+	var switchLanguage=function() {
+
+		if (languageMode == languageMode_de) {
+			languageMode=languageMode_en;
+			$("#language").html("<img src=\"images/de.png\" onclick=\"switchLanguage();\" alt=\"german\">");
+			$("#german").fadeOut();
+			$("#english").fadeIn();
+		} else {
+			languageMode=languageMode_de;
+			$("#language").html("<img src=\"images/en.png\" onclick=\"switchLanguage();\" alt=\"english\">");
+			$("#english").fadeOut();
+			$("#german").fadeIn();
+		}
+	
+	}
+
+	$("#language").html("<img src=\"images/en.png\" onclick=\"switchLanguage();\" alt=\"english\">");
+
+	$("#english").hide();
+//-->
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-26219016-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
