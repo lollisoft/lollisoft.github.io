@@ -6,11 +6,19 @@
     "description": "Distributed Multiplatform Framework is a component-based programming framework using XML (or currently a hardcoded variant) as the repository. The samples are implemented either in console or wxWidgets. This shows the independence of the GUI or UI. The screenshot shows a generated application using DevExpress.",
     "homepage": "http://lbdmf.sourceforge.net/",
     "license": "GNU LGPL",
-    "tags": "code-generator, database, front-ends, software-development, library, application-framework, devexpress-codegenerator",
+    "tags": "code-generator, database, front-ends, software-development, library, application-framework, devexpress, syncfusion, wxwidgets",
     "image": "http://lbdmf.sourceforge.net/index.php?module=uploads&func=download&fileId=35",
     "submitter": "Lothar Behrens",
     "urls": [],
     "releases": [
+        {
+            "version": "1.1.1",
+            "state": "stable",
+            "scope": "major feature",
+            "changes": "Bugfix in source code package on windows. It did not compile. A new code generator compilation for wxWidgets DialogBlocks designer based applications. This generator integrates fully into my build system and thus has to be generated to the following folder: C: lbDMF develop Projects CPP AppDevelopment. After choosing this folder, generating code with the lbDMF-wxWidgtes-Dialog-Blocks-Generator-Compilation-1.1.1.exe compilation, a folder named Code will be created. Then therein will be two makefiles: C: lbDMF develop Projects CPP AppDevelopment DynamicApp Code Targets lbDMF makefile.autobuild C: lbDMF develop Projects CPP AppDevelopment DynamicApp Code Targets lbDMF makefile.gen First make makefile.autobuild. It will generate the makefile.gen. Then build it. If the build was successful, you need to put an environment variable to let the wxWrapper start the application within the application module just built as follows: SET TARGET_APPLICATION=lbDMFManager_AppModule Then start the generated application. You will notice a faster startup :-) There is not all the functionality in this generated application. It is work in progress! Updated the internal application model to make it unnecessary to update the model at first.",
+            "download": "https://sourceforge.net/projects/lbdmf/files/lbdmf/lbDMF-1.1.1/",
+            "published": "2015-05-15T09:52:13+0000"
+        },
         {
             "version": "1.1.0",
             "state": "stable",
