@@ -57,23 +57,7 @@
           </ul>
         </div>
       </div>
-      <div id="teaser">
-<!--
-      <p></p><h1 align="center">Steigern Sie Ihre Produktivit&auml;t mit modellgetriebener Softwareentwicklung</h1><p></p>
--->
-      <p></p><h1 align="center">Softwareentwicklung kostet <b>Zeit</b>. Haben Sie die?</h1><p></p>
-
-
-<!--        <div id="col1">
-        </div>
-        <div id="col2">
-        </div>
-        <div id="col3">
-        	<p></p>
-            <h1>Steigern Sie Ihre Produktivit&auml;t mit Modellgetriebener Softwareentwicklung</h1>
-        	<p></p>
-        </div>-->
-      </div>
+      <div id="teaser"><p></p><h1 align="center">Entwicklung kostet <b>Zeit</b>. Haben Sie die?</h1><p></p></div>
       
 <script type="text/javascript" src="js/lib/jquery-1.6.1.min.js"/>
 
@@ -85,7 +69,6 @@
 
    
 })();
-
 
 //--></script>
         
@@ -202,16 +185,34 @@ var languageMode=1;
 var languageMode_de=1;
 var languageMode_en=2;
 
+window.onunload = function(){};
+						window.onload=function(){
+							var userLang = navigator.language || navigator.userLanguage; 
+
+							if (userLang != "de") {
+								languageMode=languageMode_de;
+								switchLanguage(1);
+							}
+						};
+
 function switchLanguage() {
 
 	if (languageMode == languageMode_de) {
 		languageMode=languageMode_en;
 		$("#language").html("<img src=\"images/de.png\" onclick=\"switchLanguage();\" alt=\"german\">");
+		$("#pagetitle").html("Get software from your ideas fast");
+		$("#teaser").html("<p></p><h1 align=\"center\">Development requires <b>time</b>. Do you have them?</h1><p></p>");
+		$("#topnav").html("<a class=\"skip\" title=\"skip link\" href=\"#navigation\">Skip to the navigation</a><span class=\"hideme\">.</span><a class=\"skip\" title=\"skip link\" href=\"#content\">Skip to the content</a><span class=\"hideme\">.</span><!-- end: skip link navigation --><a href=\"https://twitter.com/lollisoft\">Contact (via Twitter)</a> | <a href=\"impressum.html\">About us</a> | <a href=\"datenschutz.html\">Privacy</a>");
+		$("#nav").html("<div id=\"nav\"><!-- skiplink anchor: navigation --><a id=\"navigation\" name=\"navigation\"></a><div class=\"hlist\"><!-- main navigation: horizontal list --><ul><li class=\"active\"><strong>Home</strong></li><li><a href=\"products.html\">Products</a></li><li><a href=\"services.html\">Services</a></li></ul></div></div>");
 		$("#german").fadeOut();
 		$("#english").fadeIn();
 	} else {
 		languageMode=languageMode_de;
 		$("#language").html("<img src=\"images/en.png\" onclick=\"switchLanguage();\" alt=\"english\">");
+		$("#pagetitle").html("Von der Idee schnell zur Software");
+		$("#teaser").html("<p></p><h1 align=\"center\">Entwicklung kostet <b>Zeit</b>. Haben Sie die?</h1><p></p>");
+		$("#topnav").html("<a class=\"skip\" title=\"skip link\" href=\"#navigation\">Skip to the navigation</a><span class=\"hideme\">.</span><a class=\"skip\" title=\"skip link\" href=\"#content\">Skip to the content</a><span class=\"hideme\">.</span><!-- end: skip link navigation --><a href=\"https://twitter.com/lollisoft\">Kontakt (via Twitter)</a> | <a href=\"impressum.html\">Impressum</a> | <a href=\"datenschutz.html\">Datenschutz</a>");
+		$("#nav").html("<div id=\"nav\"><!-- skiplink anchor: navigation --><a id=\"navigation\" name=\"navigation\"></a><div class=\"hlist\"><!-- main navigation: horizontal list --><ul><li class=\"active\"><strong>Home</strong></li><li><a href=\"products.html\">Produkte</a></li><li><a href=\"services.html\">Dienstleistungen</a></li></ul></div></div>");
 		$("#english").fadeOut();
 		$("#german").fadeIn();
 	}
