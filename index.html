@@ -14,6 +14,7 @@
 		<div class="page_margins">
 			<div class="page">
 				<div id="header">
+					<div id="bannerid">0</div>
 					<div id="pagetitle">
 					Von der Idee schnell zur Software
 					</div>
@@ -96,24 +97,78 @@
 						var languageMode_en=2;
 						var introStopped=0;
 						
-						function switchLanguage() {
-							
+	var switchLanguage_new=function() {
+
+		if (languageMode == languageMode_de) {
+			languageMode=languageMode_en;
+			$("#language").html("<img src=\"images/de.png\" onclick=\"switchLanguage();\" alt=\"german\">");
+			$("#teaser").html("<p></p><h1 align=\"center\">What is Distributed Multiplatform Framework?</h1><p></p>");
+			$("#nav").html("<div id=\"nav\"><!-- skiplink anchor: navigation --><a id=\"navigation\" name=\"navigation\"></a><div class=\"hlist\"><!-- main navigation: horizontal list --><ul><li><a href=\"home.html\">Home</a></li><li><a href=\"products.html\">Produkts</a></li><li><a href=\"services.html\">Services</a></li></ul></div></div>");
+			$("#pagetitle").html("Get software from your ideas fast");
+			$("#topnav").html("<a class=\"skip\" title=\"skip link\" href=\"#navigation\">Skip to the navigation</a><span class=\"hideme\">.</span><a class=\"skip\" title=\"skip link\" href=\"#content\">Skip to the content</a><span class=\"hideme\">.</span><!-- end: skip link navigation --><a href=\"https://twitter.com/lollisoft\">Contakt (via Twitter)</a> | <a href=\"impressum.html\">About us</a> | <a href=\"datenschutz.html\">Privacy</a>");
+			$("#german").fadeOut();
+			$("#english").fadeIn();
+		} else {
+			languageMode=languageMode_de;
+			$("#language").html("<img src=\"images/en.png\" onclick=\"switchLanguage();\" alt=\"english\">");
+			$("#teaser").html("<p></p><h1 align=\"center\">Was ist Distributed Multiplatform Framework?</h1><p></p>");
+			$("#nav").html("<div id=\"nav\"><!-- skiplink anchor: navigation --><a id=\"navigation\" name=\"navigation\"></a><div class=\"hlist\"><!-- main navigation: horizontal list --><ul><li><a href=\"home.html\">Home</a></li><li><a href=\"products.html\">Produkte</a></li><li><a href=\"services.html\">Dienstleistungen</a></li></ul></div></div>");
+			$("#pagetitle").html("Von der Idee schnell zur Software");
+			$("#topnav").html("<a class=\"skip\" title=\"skip link\" href=\"#navigation\">Skip to the navigation</a><span class=\"hideme\">.</span><a class=\"skip\" title=\"skip link\" href=\"#content\">Skip to the content</a><span class=\"hideme\">.</span><!-- end: skip link navigation --><a href=\"https://twitter.com/lollisoft\">Kontakt (via Twitter)</a> | <a href=\"impressum.html\">Impressum</a> | <a href=\"datenschutz.html\">Datenschutz</a>");
+			$("#english").fadeOut();
+			$("#german").fadeIn();
+		}
+	
+	}
+						
+						
+						function switchLanguage(toNumber) {
+							//window.clearTimeout(timerID);
+							//timerID=setInterval("CountdownTimer()",1000);
+
+							number = toNumber;
+
 							if (languageMode == languageMode_de) {
 								$("#intro_navigation").html("");
+								if (introStopped==0) {
+									$("#intro_navigation").html("<img src=\"images/PreviousIntro.png\" onclick=\"setPreviousBanner();\" title=\"Letztes Intro\" alt=\"previous intro\"><img src=\"images/NextIntro.png\" onclick=\"setNextBanner();\" title=\"N&auml;chstes Intro\" alt=\"next intro\"><img src=\"images/StopIntro.png\" onclick=\"resetIntro(containerID);\" title=\"Intro beenden\" alt=\"stop intro\">");
+								}
 								languageMode=languageMode_en;
-								$("#language").html("<img src=\"images/de.png\" onclick=\"switchLanguage();\" alt=\"german\">");
+								$("#language").html("<img src=\"images/de.png\" onclick=\"switchLanguage(" + toNumber +");\" alt=\"german\">");
+
+			$("#pagetitle").html("Get software from your ideas fast");
+			$("#topnav").html("<a class=\"skip\" title=\"skip link\" href=\"#navigation\">Skip to the navigation</a><span class=\"hideme\">.</span><a class=\"skip\" title=\"skip link\" href=\"#content\">Skip to the content</a><span class=\"hideme\">.</span><!-- end: skip link navigation --><a href=\"https://twitter.com/lollisoft\">Contact (via Twitter)</a> | <a href=\"impressum.html\">About us</a> | <a href=\"datenschutz.html\">Privacy</a>");
+			$("#nav").html("<div id=\"nav\"><!-- skiplink anchor: navigation --><a id=\"navigation\" name=\"navigation\"></a><div class=\"hlist\"><!-- main navigation: horizontal list --><ul><li class=\"active\"><strong>Home</strong></li><li><a href=\"products.html\">Products</a></li><li><a href=\"services.html\">Services</a></li></ul></div></div>");
 								$("#german").fadeOut();
 								$("#english").fadeIn();
+
+								ReplaceContentInContainer(containerID,getBanner(number));
+
+								$("#col1").html("");
+								$("#col2").html("");
+								$("#col3").html("");
 							} else {
 								if (introStopped==0) {
 								$("#intro_navigation").html("<img src=\"images/PreviousIntro.png\" onclick=\"setPreviousBanner();\" title=\"Letztes Intro\" alt=\"previous intro\"><img src=\"images/NextIntro.png\" onclick=\"setNextBanner();\" title=\"N&auml;chstes Intro\" alt=\"next intro\"><img src=\"images/StopIntro.png\" onclick=\"resetIntro(containerID);\" title=\"Intro beenden\" alt=\"stop intro\">");
 								}
 								languageMode=languageMode_de;
-								$("#language").html("<img src=\"images/en.png\" onclick=\"switchLanguage();\" alt=\"english\">");
+								$("#language").html("<img src=\"images/en.png\" onclick=\"switchLanguage(" + toNumber +");\" alt=\"english\">");
+
+			$("#pagetitle").html("Von der Idee schnell zur Software");
+			$("#topnav").html("<a class=\"skip\" title=\"skip link\" href=\"#navigation\">Skip to the navigation</a><span class=\"hideme\">.</span><a class=\"skip\" title=\"skip link\" href=\"#content\">Skip to the content</a><span class=\"hideme\">.</span><!-- end: skip link navigation --><a href=\"https://twitter.com/lollisoft\">Kontakt (via Twitter)</a> | <a href=\"impressum.html\">Impressum</a> | <a href=\"datenschutz.html\">Datenschutz</a>");
+			$("#nav").html("<div id=\"nav\"><!-- skiplink anchor: navigation --><a id=\"navigation\" name=\"navigation\"></a><div class=\"hlist\"><!-- main navigation: horizontal list --><ul><li class=\"active\"><strong>Home</strong></li><li><a href=\"products.html\">Produkte</a></li><li><a href=\"services.html\">Dienstleistungen</a></li></ul></div></div>");
+								
 								$("#english").fadeOut();
 								$("#german").fadeIn();
+
+								ReplaceContentInContainer(containerID,getBanner(number));
+
+								$("#col1").html("");
+								$("#col2").html("");
+								$("#col3").html("");
 							}
-							
+								
+							number = toNumber+1;
 						}
 						
 						
@@ -157,16 +212,44 @@
 						}
 						
 						var clickTeaser="<p></p><h1 align=\"center\">Softwareentwicklung kostet <b>Zeit</b>. Haben Sie die?</h1><p></p>";
-						
-						function ReplaceContentInContainer(id,content) {
+
+						function resetContent(id) {
 							var container=document.getElementById(id);
+							
+							container.innerHTML="";
+						}
+
+						function ReplaceContentInContainer_de(id,content) {
+							var container=document.getElementById(id + "_german");
+							
+							resetContent(id + "_english");
 							
 							container.innerHTML=content;
 							container.onclick=function() {
 								introStopped=1;
 								$("#main").html(actionHTMl);
 								$("#col3_content").hide();
-								$("#" + id).fadeOut();
+								$("#" + id + "_german").fadeOut();
+								window.clearTimeout(timerID);
+								$("#col1").fadeIn(3000);
+								$("#col2").fadeIn(3000);
+								$("#col3").fadeIn(6000);
+								$("#teaser").html(clickTeaser);
+								$("#intro_navigation").html("");
+							};
+						}
+
+						function ReplaceContentInContainer_en(id,content) {
+							var container=document.getElementById(id + "_english");
+														
+							resetContent(id + "_german");
+
+							container.innerHTML=content;
+							container.onclick=function() {
+								introStopped=1;
+								$("#main").html(actionHTMl);
+								$("#col3_content").hide();
+								$("#" + id + "_english").fadeOut();
 								window.clearTimeout(timerID);
 								$("#col1").fadeIn(3000);
 								$("#col2").fadeIn(3000);
@@ -176,94 +259,159 @@
 							};
 						}
 						
-						window.onload=function() {
-							
+						function ReplaceContentInContainer(id,content) {
+							if (languageMode == languageMode_de) ReplaceContentInContainer_de(id, content);
+							if (languageMode == languageMode_en) ReplaceContentInContainer_en(id, content);
+						}
+
+						window.onunload = function(){};
+						window.onload=function(){
+							var userLang = navigator.language || navigator.userLanguage; 
+
+							if (userLang != "de") {
+								languageMode=languageMode_de;
+								switchLanguage(1);
+							}
+
+							clearInterval(timerID);
+							timerID=setInterval("CountdownTimer()",1000);
 						};
-						
+
 						//--></script>
 					<script type="text/javascript"><!--
 						var containerID="introdiv";
 						var number=minBanner;
 						var timerPaused=0;
 						
-						timerID=setInterval("CountdownTimer()",5000);
+						//timerID=setInterval("CountdownTimer()",1000);
 						
 						//ReplaceContentInContainer(containerID,getBanner(1));
 						
-						function getLandingTimeFact() {
+						function getLandingTimeFact_de() {
 							return "<div id=\"landing_content\" class=\"clearfix\" align=\"top\">" +
-							"<p>Heute ist der Konkurrenzdruck hoch. Zeit spielt dabei eine mitunter ausschlaggebende Rolle. Profitieren Sie von der Zeitersparnis." +
-							"<br>" +
-							"Ein beachtlicher Anteil von bis zu 80% der Software kann maschinell hergestellt werden, da diese Anteile wiederholenden Charakter haben. " +
-							"Ein Ansatz bei sich wiederholenden Aufgaben kennen Sie sicherlich aus der Zeit der Industrialisierung! Fabriken und Dinge vom Band. " +
-							"Dies ist bezogen auf den Computer eine Aufgabe, die dieser wunderbar und vorallem fehlerfrei immer wieder machen kann." +
+							"<p>Codegenerierung ist viel schneller als diesen von Hand zu schreiben. Bis zu 80% einer typischen Business Anwendung kann generiert werden." +
 							"<br>" +
 							"<br>" +
-							"<b>Fabrizieren von Programmcode.</b>" +
+							"<b>Dies ist eine generierte Anwendung:</b>" +
 							"<br>" +
 							"<br>" +
 							"<img class=\"float_right\" src=\"images/lbDMFManegerRunning.png\" width=\"480px\" alt=\"Sample\"/>" +
-							"Eine Anwendung wie diese ist in sehr kurzer Zeit erstellbar. " +
-							"Der Codegenerator enth&auml;lt etwa 250 Dateien. Der generierte Code diesr Anwendung besteht aus etwa 1000 Dateien. Der Generator wurde " +
-							"in etwa einem Monat entwickelt, kann aber nun in diversen Projekten von gleichartigen Anwendungen herangezogen werden. Sie sparen um so " +
-							"mehr Zeit je &ouml;fter Sie den Generator nutzen." +
+							"Die generierungszeit ist weniger als 10 Sekunden. " +
+							"In diesem Fall wurden 1000 Dateien automatisch erstellt." +
 							"</p>" +
-							"<p><b>Schauen Sie sich doch gleich eine Anwendung live an!</b></p>" +
+							"<p><b>Schauen Sie sich eine Anwendung live an!</b></p>" +
 							"</div>";
 						}
 						
-						function getLandingAutomationFact() {
+						function getLandingTimeFact_en() {
+							return "<div id=\"landing_content\" class=\"clearfix\" align=\"top\">" +
+							"<p>Generating code is much faster than producing code by hand. Up to 80% of typical business application code can be generated." +
+							"<br>" +
+							"<br>" +
+							"<b>This is a generated application:</b>" +
+							"<br>" +
+							"<br>" +
+							"<img class=\"float_right\" src=\"images/lbDMFManegerRunning.png\" width=\"480px\" alt=\"Sample\"/>" +
+							"Generation time is less than 10 seconds. " +
+							"In this case 1000 files were created automatically." +
+							"</p>" +
+							"<p><b>Go and have a look at such an application!</b></p>" +
+							"</div>";
+						}
+						
+						function getLandingTimeFact() {
+							if (languageMode == languageMode_de) return getLandingTimeFact_de();
+							if (languageMode == languageMode_en) return getLandingTimeFact_en();
+						}
+						
+						function getLandingAutomationFact_de() {
 							return "<div id=\"landing_content\" class=\"clearfix\" align=\"top\">" +
 							"<p>Programmcode, der automatisiert erstellt wird, ist f&uuml;r immer fehlerfrei, sobald er ohne Fehler generiert wird." +
 							"<br>" +
 							"<br>" +
-							"Wie in einer Fabrik durch die Automatisierung die Qualit&auml;t immer verbessert wird, kann die Codequalit&auml;t nach und nach verbessert werden. " +
-							"Ein Nachteil bei manuell erstelltem Code sind Fl&uuml;chtigkeitsfehler, die immer mal wieder vorkommen. Dies ist nat&uuml;rlich auch dann der Fall," +
-							"wenn der Code automatisch erstellt wird. <b>Aber</b>: Sie korrigieren diese nur <b>einmal</b>!" +
+							"Wie Sie im Bild sehen k&ouml;nnen, kann der Generierungsprozess automatisiert werden. Dieser automatisiert zum Beispiel die Templateauswahl per Betriebssystem." +
+							"<img class=\"float_right\" src=\"images/CodegenerationWorkflow.png\" width=\"400px\" alt=\"Sample\"/>" +
 							"<br>" +
 							"<br>" +
-							"Somit beseitigen Sie evtl. vorhandene Fehler schneller, systematischer und durch die Wiederholung alle betroffenen Stellen auf einmal. " +
-							"Weiter k&ouml;nnen Sie immer wieder zu generierenden Code in einem sogenannten Activity Diagramm modellieren. Hier haben Sie die M&ouml;glichkeit, je " +
-							"nach Plattworm zu reagieren und unterschiedliche Aktionen starten. Dies vereinfacht abl&auml;ufe und reduziert weitere Fehlerquellen. Dies sind bspw. " +
-							"mehrere Generatoren, die sie brauchen, aber einen dabei vergessen." +
-							"<img class=\"float_right\" src=\"images/CodegenerationWorkflow.png\" width=\"480px\" alt=\"Sample\"/>" +
+							"Das Diagramm ist ein UML Activity Diagram, welches die Hauptanwendung interpretieren kann." +
 							"<br>" +
 							"<br>" +
-							"Obiges Bild zeigt einen einfachen Generator Vorgang, aber unterscheidet zwischen den Betriebssystemen. Als Plattform kann die Zusammensetzung aus Steuerparamentern " +
-							"verstanden werden, die verschiedene Aspekte aktivieren. Hierunter fallen dann auch die Auswahl und validierung gew&auml;hlter Einstellungen. " +
-							"Sie haben schneller besseren Code erstellt. Fl&uuml;chtigkeitsfehler sind kein Zeitfaktor mehr, da Sie nicht mehr variieren." +
+							"<p><b>Lesen Sie mehr, wie Sie ein manueller Generierungsprozess funktioniert...</b></p>" +
 							"<br>" +
-							"</p>" +
-							"<p><b>Wie das funktioniert, erfahren Sie hier...</b></p>" +
+							"Das Erstellen von UML Activity Diagrammen und dessen Nutzung ist  f&uuml;r erfahrene Entwickler gedacht, die mehr als ein Template nutzen wollen." +
 							"</div>";
 						}
+
+						function getLandingAutomationFact_en() {
+							return "<div id=\"landing_content\" class=\"clearfix\" align=\"top\">" +
+							"The quality of automatically generated code is always as error free as it's template code, thus you remove errors once at all." +
+							"<br>" +
+							"<br>" +
+							"As you can see in the picture, the software generation process can be automated. This automates for example the template selection per operating system." +
+							"<img class=\"float_right\" src=\"images/CodegenerationWorkflow.png\" width=\"400px\" alt=\"Sample\"/>" +
+							"<br>" +
+							"<br>" +
+							"The diagram is an UML activity diagram, the main application can interpret." +
+							"<br>" +
+							"<br>" +
+							"<p><b>Read more to learn how a manual code generation process works, developing an addressbook app...</b></p>" +
+							"<br>" +
+							"Creating UML activity diagrams and thus using them instead is to be targeted to more experienced developers, who like to use more than one template." +
+							"</div>";
+						}
+
+						function getLandingAutomationFact() {
+							if (languageMode == languageMode_de) return getLandingAutomationFact_de();
+							if (languageMode == languageMode_en) return getLandingAutomationFact_en();
+						}
 						
-						function getLandingSystemFact() {
+						function getLandingSystemFact_de() {
 							return "<div id=\"landing_content\" class=\"clearfix\" align=\"top\">" +
 							"<p>Die Wahl des Systems spielt keine Rolle und sollte es auch nicht. Heute stellt sich nicht mehr die Frage nach dem System, sondern nach welchen Systemen." +
 							"<br>" +
 							"<br>" +
-							"Es ist sehr aufw&auml;ndig, Software zu entwickeln. Erstrecht wenn diese f&uuml;r mehrere Systeme gedacht ist. Wenn Sie hier von Hand herangehen, haben wir ein Argument, dies zu ändern. " +
-							"Es gibt zwar verschiedene Ans&auml;tze f&uuml;r HTML5 basierte Anwendungen, um die Software nur einmal zu entwickeln. Es h&ouml;hrt aber bei HTML5 meistens auf." +
-							"" +
+							"Die Technik wird veraltet sein, wenn Sie mit Ihrer Softwareentwicklung fertig sind. Sie haben in eine Plattform investiert, die nun am Trend vorbei geht. " +
+							"Was tun Sie?" +
 							"<br>" +
 							"<br>" +
-							"Wollen Sie beispielsweise für Tablets, PC's und das Web die gleiche Funktionalit&auml;t bereitstellen, f&auml;llt die Wahl heute meist auf HTML5 L&auml;sungen. Aber dabei gehen " +
-							"Sie auch Kompromisse ein. Diese sind beispielsweise Performance, Auswahl der Programmiersprache." +
+							"Nutzen Sie eine Software, die auf diese Szenarien vorbereitet ist. Profitieren Sie von Experten, die sich um die Plattformen k&uuml;mmern. Konzentrieren Sie sich auf das Fachliche. " +
+							"Sie Dokumentieren nicht nur mit UML, sondern machen Ihr UML Modell zu einem First Class Citizen. Den Rest machen wir!" +
 							"<br>" +
 							"<br>" +
-							"<img class=\"float_right\" src=\"images/wxWrapperApplications.png\" width=\"480px\" alt=\"Sample\"/>" +
-							"<br>" +
-							"<br>" +
-							"Folgendes Bild zeigt die Anwendung, mit der Sie Code generieren. Sie Bietet eine UML Import Schnittstelle f&uuml;r ArgoUML und BoUML an. Mit BoUML ist auch ein Roundtrip m&ouml;glich, mit dessen Hilfe " +
-							"Sie eine deteiliertere UML Variente mit mehr M&ouml;glichkeiten erhalten." +
-							"<br>" +
-							"<br>" +
-							"Mit der Auswahl des Codegererators entfallen diese Einschr&auml;nkungen zumindest teilweise." +
+							"<img class=\"float_right\" src=\"images/wxWrapperApplications.png\" width=\"400px\" alt=\"Sample\"/>" +
+							"Mit diesem Programm arbeiten Sie, wenn Sie f&uuml;r eine Plattform Code generieren wollen. " +
+							"Mit der Auswahl des Codegererators steuern Sie, welche Plattformen Sie nutzen wollen." +
 							"<br>" +
 							"</p>" +
 							"<p><b>Sie kostet dies nichts! Fangen Sie einfach mal damit an...</b></p>" +
 							"</div>";
+						}
+
+						function getLandingSystemFact_en() {
+							return "<div id=\"landing_content\" class=\"clearfix\" align=\"top\">" +
+							"<p>The selection of a system does not matter and it should not matter. Today the question is not about the system, but rather about which systems." +
+							"<br>" +
+							"<br>" +
+							"The technology would be obsolete, if you have finished the softwaredevelopment. You have invested into a platform, that will follow a trend, that is over. " +
+							"What would you do?" +
+							"<br>" +
+							"<br>" +
+							"Use a software that is prepared for such scenarious. Benefit from the experts, that care about the platform. Concentrate at the functional. " +
+							"You wouldn't only document with UML, but rather make your UML model a first class citizen. We would do the rest! " +
+							"<br>" +
+							"<br>" +
+							"<img class=\"float_right\" src=\"images/wxWrapperApplications.png\" width=\"400px\" alt=\"Sample\"/>" +
+							"You would work with this application, if you create code for a platform." +
+							"You control which platform you use by the selection of the code generator." +
+							"<br>" +
+							"<br>" +
+							"<p><b>Go and create your first application...</b></p>" +
+							"</div>";
+						}
+
+						function getLandingSystemFact() {
+							if (languageMode == languageMode_de) return getLandingSystemFact_de();
+							if (languageMode == languageMode_en) return getLandingSystemFact_en();
 						}
 						
 						function getLandingContents(number) {
@@ -297,52 +445,59 @@
 						}
 						
 						function getBanner(number) {
+							$("#bannerid").html(number);
 							switch (number) {
 								case 0:
 								number++;
 								case 1:
 								clearInterval(timerID);
-								timerID=setInterval("CountdownTimer()",5000);
+								timerID=setInterval("CountdownTimer()",1000);
 								
-								$("#teaser").html("<p></p><h1 align=\"center\">Softwareentwicklung kostet <b>Zeit</b>. Haben Sie die?</h1><p></p>");
+								if (languageMode == languageMode_de) $("#teaser").html("<p></p><h1 align=\"center\">Entwicklung kostet <b>Zeit</b>. Haben Sie die?</h1><p></p>");
+								if (languageMode == languageMode_en) $("#teaser").html("<p></p><h1 align=\"center\">Development requires <b>time</b>. Do you have them?</h1><p></p>");
 								
-								return "<div id=\"introdiv_col1\"><div id=\"introdiv_col1_content\"><a class=\"slide_out\" href=\"#\"><img   src=\"images/clock_5_before_12.png\" height=\"500px\"/></a></div></div><div id=\"introdiv_col3\">" + getLandingContents(number) + "</div>";
+								return "<div id=\"introdiv_col1\"><div id=\"introdiv_col1_content\"><a class=\"float_left\" href=\"#\"><img   src=\"images/clock_5_before_12.png\" height=\"500px\"/></a></div></div><div id=\"introdiv_col3\">" + getLandingContents(number) + "</div>";
 								case 2:
 								clearInterval(timerID);
-								timerID=setInterval("CountdownTimer()",120000); // Text soll gelesen werden können
+								timerID=setInterval("CountdownTimer()",30000); // Text soll gelesen werden können
 								
-								$("#teaser").html("<p></p><h1 align=\"center\">Softwareentwicklung kostet <b>Zeit</b>. Haben Sie die?</h1><p></p>");
+								if (languageMode == languageMode_de) $("#teaser").html("<p></p><h1 align=\"center\">Entwicklung kostet <b>Zeit</b>. Haben Sie die?</h1><p></p>");
+								if (languageMode == languageMode_en) $("#teaser").html("<p></p><h1 align=\"center\">Development requires <b>time</b>. Do you have them?</h1><p></p>");
 								
 								return "<div id=\"introdiv_col1\"><div id=\"introdiv_col1_content\"><a href=\"#\"><img class=\"float_left\" src=\"images/clock_5_before_12.png\" height=\"500px\"/></a></div></div><div id=\"introdiv_col3\">" + getLandingContents(number) + "</div>";
 								case 3:
 								clearInterval(timerID);
-								timerID=setInterval("CountdownTimer()",5000);
+								timerID=setInterval("CountdownTimer()",1000);
 								
-								$("#teaser").html("<p></p><h1 align=\"center\">Verbessern Sie die Softwarequalit&auml;t</h1><p></p>");
+								if (languageMode == languageMode_de) $("#teaser").html("<p></p><h1 align=\"center\">Verbessern Sie die Softwarequalit&auml;t</h1><p></p>");
+								if (languageMode == languageMode_en) $("#teaser").html("<p></p><h1 align=\"center\">Improve your software quality</h1><p></p>");
 								
-								return "<div id=\"introdiv_col1\"><div id=\"introdiv_col1_content\"><a class=\"slide_out\" href=\"#\"><img    src=\"images/quality_approved.png\" height=\"200px\"/></a></div></div><div id=\"introdiv_col3\">" + getLandingContents(number) + "</div>";
+								return "<div id=\"introdiv_col1\"><div id=\"introdiv_col1_content\"><a class=\"float_left\" href=\"#\"><img    src=\"images/quality_approved.png\" height=\"200px\"/></a></div></div><div id=\"introdiv_col3\">" + getLandingContents(number) + "</div>";
 								case 4:
 								clearInterval(timerID);
-								timerID=setInterval("CountdownTimer()",120000); // Text soll gelesen werden können
+								timerID=setInterval("CountdownTimer()",30000); // Text soll gelesen werden können
 								
-								$("#teaser").html("<p></p><h1 align=\"center\">Verbessern Sie die Softwarequalit&auml;t</h1><p></p>");
+								if (languageMode == languageMode_de) $("#teaser").html("<p></p><h1 align=\"center\">Verbessern Sie die Softwarequalit&auml;t</h1><p></p>");
+								if (languageMode == languageMode_en) $("#teaser").html("<p></p><h1 align=\"center\">Improve your software quality</h1><p></p>");
 								
 								return "<div id=\"introdiv_col1\"><div id=\"introdiv_col1_content\"><a href=\"#\"><img class=\"float_left\"  src=\"images/quality_approved.png\" height=\"200px\"/></a></div></div><div id=\"introdiv_col3\">" + getLandingContents(number) + "</div>";
 								case 5:
 								clearInterval(timerID);
-								timerID=setInterval("CountdownTimer()",5000);
+								timerID=setInterval("CountdownTimer()",1000);
 								
-								$("#teaser").html("<p></p><h1 align=\"center\">Automatisieren Sie die Softwareentwicklung</h1><p></p>");
+								if (languageMode == languageMode_de) $("#teaser").html("<p></p><h1 align=\"center\">Fangen Sie an!</h1><p></p>");
+								if (languageMode == languageMode_en) $("#teaser").html("<p></p><h1 align=\"center\">Let's get started!</h1><p></p>");
 								
-								return "<div id=\"introdiv_col1\"><div id=\"introdiv_col1_content\"><a class=\"slide_out\" href=\"#\"><img    src=\"images/VariousComputerTypes.png\" height=\"150px\"/></a></div></div><div id=\"introdiv_col3\">" + getLandingContents(number) + "</div>";
+								return "<div id=\"introdiv_col1\"><div id=\"introdiv_col1_content\"><a class=\"float_left\" href=\"#\"><img    src=\"images/VariousComputerTypes.png\" height=\"150px\"/></a></div></div><div id=\"introdiv_col3\">" + getLandingContents(number) + "</div>";
 							}
 							
 							// Abschluss der Banner Facts
 							
 							clearInterval(timerID);
-							//timerID=setInterval("CountdownTimer()",60000); // Text soll gelesen werden können
+							//timerID=setInterval("CountdownTimer()",30000); // Text soll gelesen werden können
 							
-							$("#teaser").html("<p></p><h1 align=\"center\">Automatisieren Sie die Softwareentwicklung</h1><p></p>");
+							if (languageMode == languageMode_de) $("#teaser").html("<p></p><h1 align=\"center\">Fangen Sie an!</h1><p></p>");
+							if (languageMode == languageMode_en) $("#teaser").html("<p></p><h1 align=\"center\">Let's get started!</h1><p></p>");
 							return "<div id=\"introdiv_col1\"><div id=\"introdiv_col1_content\"><a  href=\"#\"><img class=\"float_left\"    src=\"images/VariousComputerTypes.png\" height=\"150px\"/></a></div></div><div id=\"introdiv_col3\">" + getLandingContents(number) + "</div>";
 							
 							
@@ -356,38 +511,38 @@
 							
 							switch (number) {
 								case 0:
-								$("#col3_content").fadeIn(2000);
-								$("#landing_content").fadeIn(6000);
+								//$("#col3_content").fadeIn(1000);
+								$("#landing_content").fadeIn(3000);
 								return "";
 								case 1:
 								$("#teaser").fadeIn(1000);
-								$("#col3_content").fadeIn(2000);
-								$("#landing_content").fadeIn(6000);
+								//$("#col3_content").fadeIn(1000);
+								$("#landing_content").fadeIn(3000);
 								return "";
 								case 2:
 								$("#teaser").fadeIn(1000);
-								$("#col3_content").fadeIn(2000);
-								$("#landing_content").fadeIn(6000);
+								//$("#col3_content").fadeIn(1000);
+								$("#landing_content").fadeIn(3000);
 								return "";
 								case 3:
 								$("#teaser").fadeIn(1000);
-								$("#col3_content").fadeIn(2000);
-								$("#landing_content").fadeIn(6000);
+								//$("#col3_content").fadeIn(1000);
+								$("#landing_content").fadeIn(3000);
 								return "";
 								case 4:
 								$("#teaser").fadeIn(1000);
-								$("#col3_content").fadeIn(2000);
-								$("#landing_content").fadeIn(6000);
+								//$("#col3_content").fadeIn(1000);
+								$("#landing_content").fadeIn(3000);
 								return "";
 								case 5:
 								$("#teaser").fadeIn(1000);
-								$("#col3_content").fadeIn(2000);
-								$("#landing_content").fadeIn(6000);
+								//$("#col3_content").fadeIn(1000);
+								$("#landing_content").fadeIn(3000);
 								return "";
 								case 6:
 								$("#teaser").fadeIn(1000);
-								$("#col3_content").fadeIn(2000);
-								$("#landing_content").fadeIn(6000);
+								//$("#col3_content").fadeIn(1000);
+								$("#landing_content").fadeIn(3000);
 								return "";
 							}
 							
@@ -396,17 +551,29 @@
 						
 						function CountdownTimer() {
 							if (timerPaused == 1) return;
-							
+														
 							if(number < totalBanners) {
 								$("#col3_content").hide();
 								ReplaceContentInContainer(containerID,getBanner(number));
 								setFadeIn(number);
+								if (languageMode == languageMode_de) {
+									$("#language").html("<img src=\"images/en.png\" onclick=\"switchLanguage(" + number +");\" alt=\"english\">");
+								}
+								if (languageMode == languageMode_en) {
+									$("#language").html("<img src=\"images/de.png\" onclick=\"switchLanguage(" + number +");\" alt=\"german\">");
+								}
 								number++;
 							} else {
 								clearInterval(timerID);
 								$("#col3_content").hide();
 								ReplaceContentInContainer(containerID,getBanner(number));
 								setFadeIn(number);
+								if (languageMode == languageMode_de) {
+									$("#language").html("<img src=\"images/en.png\" onclick=\"switchLanguage(" + number +");\" alt=\"english\">");
+								}
+								if (languageMode == languageMode_en) {
+									$("#language").html("<img src=\"images/de.png\" onclick=\"switchLanguage(" + number +");\" alt=\"german\">");
+								}
 							}
 						}
 						//--></script>
@@ -416,43 +583,38 @@
 							<div id="col1">
 								<div id="col1_content" class="clearfix">
 									<!-- add your content here -->
-									<img class="float_left" src="images/clock_5_before_12.png" alt="Sanduhr"/>
-									<p>
-									Softwareentwicklung kostet <b>Zeit</b>. Haben Sie die? Wenn nicht, lesen Sie weiter.<br/><br/>Der Aufwand, den Sie ben&ouml;tigen, entsteht zu Teilen aus den folgenden Disziplinen:
-									Planung, Analyse, Entwurf, Programmierung, sowie Validierung und Verifikation.
-									Reduzieren Sie Ihre Zeit, wo es geht.</p>
-									<p>Software wird in den meisten Firmen noch von Hand geschrieben, da sich viele nicht bewusst darüber sind, dass es auch anders geht. Viele Teile einer Software sind systematisch ähnlich und daher geeignet für eine automatische Code Generierung.</p>
-									<p>Nutzen Sie diese M&ouml;glichkeit!</p>
+            <img class="float_left" src="images/clock_5_before_12.png" alt="Sanduhr"/>
+            <p>
+            Softwareentwicklung kostet <b>Zeit</b>. Haben Sie die? Wenn nicht, lesen Sie weiter.<br/><br/>Der Aufwand, den Sie ben&ouml;tigen, entsteht zu Teilen aus den folgenden Disziplinen:
+            Planung, Analyse, Entwurf, Programmierung, sowie Validierung und Verifikation.
+            Reduzieren Sie Ihre Zeit, wo es geht.</p>
+            <p>Software wird in den meisten Firmen noch von Hand geschrieben, da sich viele nicht bewusst darüber sind, dass es auch anders geht. Viele Teile einer Software sind systematisch ähnlich und daher geeignet für eine automatische Code Generierung.</p>
+            <p>Nutzen Sie diese M&ouml;glichkeit!</p>
 								</div>
 							</div>
 							<div id="col2">
 								<div id="col2_content" class="clearfix">
 									<!-- add your content here -->
-									<img class="float_right" src="images/quality_approved.png" alt="Anwendung als Screenshot mit Lineal abgemessen."/>
-									<p>Wir erh&ouml;hen die <b>Qualität</b> Ihrerer Software. In von Hand erstelltem Code schleichen sich gerne Fehler ein. Wir machen eben alle welche.</p>
-									<p>Durch Wiederholung von systematischem Code k&ouml;nnen so unterschiedliche Fehler entstehen, obwohl man glaubt, das gleiche gemacht zu haben. Wenn man einen Fehler dann behoben hat, sind nicht alle weg - wenn man die Wiederholungen mittels Copy&amp;Paste erstellt hat.</p>
-									<p>Wird der Code dagegen aus einer Vorlage erstellt, brauchen Sie den Fehler nur in der Vorlage zu beheben und drücken einen Knopf!</p>
+            <img class="float_right" src="images/quality_approved.png" alt="Anwendung als Screenshot mit Lineal abgemessen."/>
+            <p>Wir erh&ouml;hen die <b>Qualität</b> Ihrerer Software. In von Hand erstelltem Code schleichen sich gerne Fehler ein. Wir machen eben alle welche.</p>
+            <p>Durch Wiederholung von systematischem Code k&ouml;nnen so unterschiedliche Fehler entstehen, obwohl man glaubt, das gleiche gemacht zu haben. Wenn man einen Fehler dann behoben hat, sind nicht alle weg - wenn man die Wiederholungen mittels Copy&amp;Paste erstellt hat.</p>
+            <p>Wird der Code dagegen aus einer Vorlage erstellt, brauchen Sie den Fehler nur in der Vorlage zu beheben und drücken einen Knopf!</p>
 								</div>
 							</div>
-							<div id="introdiv"></div>
+							<div id="introdiv_german"></div>
 							<div id="col3">
-								<!--
-								 <div id="example1div"></div>
-								 <div id="click_banner"></div>
-								 -->
-								<noscript>
-									<iframe name="Framename" src="banner/index/banner01.html" marginwidth="0" marginheight="0" frameborder="0" scrolling="no"></iframe> 
-								</noscript>
-								<!-- add your content here -->
-								<p>Modellgetriebene Softwareentwicklung wird in diversen Foren und Puplikationen als vielversprechende Variante beschrieben, wie Sie Zeit sparen und Qualität steigern. Hier wird eine Möglichkeit aufgezeigt, wie Sie einen Teil davon erreichen k&ouml;nnen.</p>
-								<p>Starten Sie mit einem Projekt, so werden Sie zuerst die Anforderungen Ihrer Kunden bekommen, oder diese gemeinsam ermitteln. Alle Planunsaktivit&auml;ten sehe ich in diesem Szenario als erledigt an. Das Vorgehensmodell bedingt mehr oder weniger modellgetriebene Softwareentwicklung, da aus einem Modell Software entsteht.</p>
-								<img class="float_left" src="images/prototype.png" alt="Sample"/>
-								<p>Die <b>Analysephase</b> der Softwareentwicklung beinhaltet folgende Themen: Auswertung, Mock-Up, Prozessanalyse / Prozessmodell, Systemanalyse, Strukturierte und Objektorientierte Analyse.</p>
-								<p>Hierbei stelle ich den Mock-Up in den Vordergrund, da dies bereits links dargestellt ist und eine vergleichsweise gut funktionierende Anwendung darstellt.</p>
-								<p>Die &uuml;blichen Mock Verfahren basieren beispielsweise auf Wireframes, Klick Dummies, oder Folienpr&auml;sentationen von zusammengeschobenen Designs, oder Montagen aus Ihrer Entwicklungsumgebung.</p>
-								<p>Software soll aber so fr&uuml;h wie m&ouml;glich funktionieren! Wieso malen dann viele erst ein Bild oder erstellen einen Mock? Das Problem ist nicht der Mock, sondern die meist fehlende Weiterverarbeitbarkeit dieses Mocks. K&ouml;nnen Sie Ihre weiterverarbeiten?</p>
-								<p>Wenn Sie Ihre Mockups weiterverarbeiten k&ouml;nnen, gratuliere ich Ihnen! Wenn nicht, dann werden Ihnen folgende M&ouml;glichkeiten gefallen: Achten Sie darauf, dass Ihre Mockups aus XML Dateien bestehen und wenn Bilder verwendet werden, nur referenzierte sind praktikabel. Verwenden Sie in Ihrem Mock schon richtige Bezeichner für die darzustellenden Inhalte.</p>
-								<p>Diese Informationen reichen f&uuml;r die erste Etappe aus. Zusammen mit den Informationen, wie Name der Maske, Ort / Pfad in Ihrem Projekt und den Feldern, die ordentlich benannt sind, sowie den Typen der Felder (Zahl, Text, W&auml;hrung,...) steht einer Weiterverarbeitung nichts im Weg.</p>
+								<div id="col3_content" class="clearfix">
+									<!-- add your content here -->
+            <p>Modellgetriebene Softwareentwicklung wird in diversen Foren und Puplikationen als vielversprechende Variante beschrieben, wie Sie Zeit sparen und Qualität steigern. Hier wird eine Möglichkeit aufgezeigt, wie Sie einen Teil davon erreichen k&ouml;nnen.</p>
+            <p>Starten Sie mit einem Projekt, so werden Sie zuerst die Anforderungen Ihrer Kunden bekommen, oder diese gemeinsam ermitteln. Alle Planunsaktivit&auml;ten sehe ich in diesem Szenario als erledigt an. Das Vorgehensmodell bedingt mehr oder weniger modellgetriebene Softwareentwicklung, da aus einem Modell Software entsteht.</p>
+            <img class="float_left" src="images/prototype.png" alt="Sample"/>
+            <p>Die <b>Analysephase</b> der Softwareentwicklung beinhaltet folgende Themen: Auswertung, Mock-Up, Prozessanalyse / Prozessmodell, Systemanalyse, Strukturierte und Objektorientierte Analyse.</p>
+            <p>Hierbei stelle ich den Mock-Up in den Vordergrund, da dies bereits links dargestellt ist und eine vergleichsweise gut funktionierende Anwendung darstellt.</p>
+            <p>Die &uuml;blichen Mock Verfahren basieren beispielsweise auf Wireframes, Klick Dummies, oder Folienpr&auml;sentationen von zusammengeschobenen Designs, oder Montagen aus Ihrer Entwicklungsumgebung.</p>
+            <p>Software soll aber so fr&uuml;h wie m&ouml;glich funktionieren! Wieso malen dann viele erst ein Bild oder erstellen einen Mock? Das Problem ist nicht der Mock, sondern die meist fehlende Weiterverarbeitbarkeit dieses Mocks. K&ouml;nnen Sie Ihre weiterverarbeiten?</p>
+            <p>Wenn Sie Ihre Mockups weiterverarbeiten k&ouml;nnen, gratuliere ich Ihnen! Wenn nicht, dann werden Ihnen folgende M&ouml;glichkeiten gefallen: Achten Sie darauf, dass Ihre Mockups aus XML Dateien bestehen und wenn Bilder verwendet werden, nur referenzierte sind praktikabel. Verwenden Sie in Ihrem Mock schon richtige Bezeichner für die darzustellenden Inhalte.</p>
+            <p>Diese Informationen reichen f&uuml;r die erste Etappe aus. Zusammen mit den Informationen, wie Name der Maske, Ort / Pfad in Ihrem Projekt und den Feldern, die ordentlich benannt sind, sowie den Typen der Felder (Zahl, Text, W&auml;hrung,...) steht einer Weiterverarbeitung nichts im Weg.</p>
+								</div>
 							</div>
 							<!-- IE Column Clearing -->
 							<div id="ie_clearing"> &#160; </div>
@@ -464,55 +626,47 @@
 							<div id="col1">
 								<div id="col1_content" class="clearfix">
 									<!-- Add your content here -->
-									<img class="float_left" src="images/clock_5_before_12.png" alt="hourglass" />
-									<p>
-									Software development costs <b>time</b>. Do you have them? If not, read on.
-									Expenses you require, arises to parts of the following disciplines: Planning, analysis, design, coding, and validation and verification. Reduce your time where it goes.</p>
-									<p>Software is written in most enterprises by hand, since many are not aware of the fact that there is another way. Many parts of a software are systematically similar and
-									therefore suitable for automatic code generation.</p>
-									<p>Use this possibility!</p>
+             <img class="float_left" src="images/clock_5_before_12.png" alt="hourglass" />
+             <p>
+             Software development costs <b>time</b>. Do you have them? If not, read on.<br/>
+			 Expenses you require, arises to parts of the following disciplines: Planning, analysis, design, coding, and validation and verification. Reduce your time where it goes.</p>
+             <p>Software is written in most enterprises by hand, since many are not aware of the fact that there is another way. Many parts of a software are systematically similar and therefore suitable for automatic code generation.</p>
+             <p>Use this possibility!</p>
 								</div>
 							</div>
 							<div id="col2">
 								<div id="col2_content" class="clearfix">
 									<!-- Add your content here -->
-									<img class="float_right" src="images/quality_approved.png" alt="application as a screenshot measured with a ruler." />
-									<p>We increase the <b>quality</b> of your software. In manually created code there is likely simply to sneak a mistake. We make up all that.</p>
-									<p>By the repetition of systematic code different errors may occur, although it is believed to have done the same. If you have then fixed a bug, not all gone - if you've created the repetitions using copy &amp; paste programming.</p>
-									<p>If the code has been created from a template, you only need to fix the error in the template and push a button!</p>
+             <img class="float_right" src="images/quality_approved.png" alt="application as a screenshot measured with a ruler." />
+             <p>We increase the <b>quality</b> of your software. In manually created code there is likely simply to sneak a mistake. We make up all that.</p>
+             <p>By the repetition of systematic code different errors may occur, although it is believed to have done the same. If you have then fixed a bug, not all gone - if you've created the repetitions using copy &amp; paste programming.</p>
+             <p>If the code has created from a template, you need only the error in the template to fix and push a button! </p>
 								</div>
 							</div>
-							<!--
-							 <div id="introdiv"> </div>
-							 -->
+							 <div id="introdiv_english"> </div>
 							<div id="col3">
-								<!--
-								 <div id="example1div"> </div>
-								 <div id="click_banner"> </div>
-								 -->
-								<noscript>
-									<iframe name="frame name" src="banner/index/banner01.html" marginwidth="0" marginheight="0" frameborder="0" scrolling="no"> </iframe>
-								</noscript>
-								<!-- Add your content here -->
-								<p>Model-driven engineering is described in various forums and publications as a promising variant how to save time and increase quality. Here is a way to show how you can reach any part thereof.</p>
-								<p>Starting a project, you first get your customers' needs, or they identify their needs together with you. All planning is expected as finished in the actual scenario as done beforehand.
-								The process is more or less model-driven software development, as it results in a software based on a model.</p>
-								<img class="float_left" src="images/prototype.png" alt="Sample" />
-								<p>In the <b>analysis phase</b> software development includes the following topics: evaluation, mock-up, process analysis / process model, system analysis, structured and object-oriented analysis</p>
-								<p>Here, I present the mock-up in the foreground, as this is already shown on the left and is a relatively well-functioning application.</p>
-								<p>The usual mocking methods are based, for example on wireframes, click dummies, or presentations of designs moved together, or montages from your development environment.</p>
-								<p>Software should work as fast as possible! Why then many paint only a picture or create a mock? The problem is not the mock, but mostly the lack of further processing of those mocks. Can you further process these?</p>
-								<p>If your mockups can further be processed I will congratulate! If not, then you have the following possibilities: Make sure that your mockups are stored in XML files and if images are used, only referenced ones are practical. Use already correctly defined identifiers in your mock for the displayed content.</p>
-								<p>This information is sufficient for navigation use from the first stage. Together with the information, such as name of the form, location / path in your project and the fields are properly named, as well as the types of fields (number, text, currency, ...) is a finishing nothing in the way.</p>
+								<div id="col3_content" class="clearfix">
+									<!-- add your content here -->
+             <p>Model-driven engineering is described in various forums and publications as a promising variant how to save time and increase quality. Here is a way to show how you can reach any part thereof.</p>
+             <p>Starting a project, you first get your customers' needs, or they identify with a project together. All planning is expected as finished in the actual scenario, as done before.
+			 The process model requires more or less model-driven software development, as results in a software based on a model.</p>
+             <img class="float_left" src="images/prototype.png" alt="Sample" />
+             <p>In the <b>analysis phase</b> software development includes the following topics: evaluation, mock-up, process analysis / process model, system analysis, structured and object-oriented analysis</p>
+             <p>Here, I present the mock-up in the foreground, as this is already shown on the left and is a relatively well-functioning application.</p>
+             <p>The usual mocking methods are based, for example on wireframes, click dummies, or presentations of designs moved together, or montages from your development environment.</p>
+             <p>Software should work as fast as possible! Why then many paint only a picture or create a mock? The problem is not the mock, but mostly the lack of further processing of those mocks. Can you further process these?</p>
+             <p>If your mockups can further be processed I will congratulate! If not, then you have the following possibilities: Make sure that your mockups are stored in XML files and if images are used, only referenced ones are practical. Use already in your mock right identifiers for the displayed content.</p>
+             <p>This information is sufficient for navigation use from the first stage. Together with the information, such as name of the form, location / path in your project and the fields are properly named, as well as the types of fields (number, text, currency, ...) is a finishing nothing in the way.</p>
+								</div>
 							</div>
 							<!-- IE Column Clearing -->
 							<div id="ie_clearing"> </div>
 						</div>
 					</div>
 				
-					<!-- begin: #footer -->
+    	  					<!-- begin: #footer -->
 					<div id="footer">
-						A <a href="http://www.yaml.de/">YAML</a> Layout. &copy; Lothar Behrens<div id="col2"><a href="http://www3.clustrmaps.com/user/31911e2cf"><img class="float_right" src="http://www3.clustrmaps.com/stats/maps-no_clusters/www.lollisoft.de-thumb.jpg" width="32px" alt="Locations of visitors to this page" /></div>
+						A <a href="http://www.yaml.de/">YAML</a> Layout. &copy; Lothar Behrens<div id="col2_footer"><a href="http://www3.clustrmaps.com/user/31911e2cf"><img class="float_right" src="http://www3.clustrmaps.com/stats/maps-no_clusters/www.lollisoft.de-thumb.jpg" width="32px" alt="Locations of visitors to this page" /></div>
 </a>
 					</div>
 				</div>
@@ -523,17 +677,13 @@
 </html>
 
 <script type="text/javascript"><!--
-	$("#language").html("<img src=\"images/en.png\" onclick=\"switchLanguage();\" alt=\"english\">");
+	$("#language").html("<img src=\"images/en.png\" onclick=\"switchLanguage(" + minBanner + ");\" alt=\"english\">");
 	
 	$("#intro_navigation").html("<img src=\"images/PreviousIntro.png\" onclick=\"setPreviousBanner();\" title=\"Letztes Intro\" alt=\"previous intro\"><img src=\"images/NextIntro.png\" onclick=\"setNextBanner();\" title=\"N&auml;chstes Intro\" alt=\"next intro\"><img src=\"images/StopIntro.png\" onclick=\"resetIntro(containerID);\" title=\"Intro beenden\" alt=\"stop intro\">");
 	
-	$("#english").hide();
+	$("#english").html("<div id=\"main\"><div id=\"introdiv_english\"> </div><div id=\"ie_clearing\"> </div></div>");
+	$("#german").html("<div id=\"main\"><div id=\"introdiv_german\"> </div><div id=\"ie_clearing\"> </div></div>");
 	
-	
-    $("#col1").hide();
-    $("#col2").hide();
-    $("#col3").hide();
-    //$(containerID).show();
     $("#main").css("overflow", "hidden");
     
     $("#teaser").hide();
