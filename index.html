@@ -420,25 +420,34 @@
 								return "";
 								case 1:
 								actionHTMl="<script language='javascript'>window.location = 'http://www.lollisoft.de/product3.html';</script>";
+								if (languageMode == languageMode_de) clickTeaser="<p></p><h1 align=\"center\">Entwicklung kostet <b>Zeit</b>. Haben Sie die?</h1><p></p>";
+								if (languageMode == languageMode_en) clickTeaser="<p></p><h1 align=\"center\">Development requires <b>time</b>. Do you have them?</h1><p></p>";
 								// Floating clock - no text while float
 								return "";
 								case 2:
 								actionHTMl="<script language='javascript'>window.location = 'http://www.lollisoft.de/product3.html';</script>";
-								clickTeaser="<p></p><h1 align=\"center\">Softwareentwicklung kostet <b>Zeit</b>. Haben Sie die?</h1><p></p>";
+								if (languageMode == languageMode_de) clickTeaser="<p></p><h1 align=\"center\">Entwicklung kostet <b>Zeit</b>. Haben Sie die?</h1><p></p>";
+								if (languageMode == languageMode_en) clickTeaser="<p></p><h1 align=\"center\">Development requires <b>time</b>. Do you have them?</h1><p></p>";
 								return getLandingTimeFact();
 								case 3:
 								actionHTMl="<script language='javascript'>window.location = 'http://www.lollisoft.de/product2.html';</script>";
+								if (languageMode == languageMode_de) clickTeaser="<p></p><h1 align=\"center\">Verbessern Sie die Softwarequalit&auml;t</h1><p></p>";
+								if (languageMode == languageMode_en) clickTeaser="<p></p><h1 align=\"center\">Improve your software quality</h1><p></p>";
 								return "";
 								case 4:
 								actionHTMl="<script language='javascript'>window.location = 'http://www.lollisoft.de/product2.html';</script>";
-								clickTeaser="<p></p><h1 align=\"center\">Verbessern Sie die Softwarequalit&auml;t</h1><p></p>";
+								if (languageMode == languageMode_de) clickTeaser="<p></p><h1 align=\"center\">Verbessern Sie die Softwarequalit&auml;t</h1><p></p>";
+								if (languageMode == languageMode_en) clickTeaser="<p></p><h1 align=\"center\">Improve your software quality</h1><p></p>";
 								return getLandingAutomationFact();
 								case 5:
 								actionHTMl="<script language='javascript'>window.location = 'http://www.lollisoft.de/product1.html';</script>";
+								if (languageMode == languageMode_de) clickTeaser="<p></p><h1 align=\"center\">Automatisieren Sie die Softwareentwicklung</h1><p></p>";
+								if (languageMode == languageMode_en) clickTeaser="<p></p><h1 align=\"center\">Automate your software development</h1><p></p>";
 								return "";
 								case 6:
 								actionHTMl="<script language='javascript'>window.location = 'http://www.lollisoft.de/product1.html';</script>";
-								clickTeaser="<p></p><h1 align=\"center\">Automatisieren Sie die Softwareentwicklung</h1><p></p>";
+								if (languageMode == languageMode_de) clickTeaser="<p></p><h1 align=\"center\">Automatisieren Sie die Softwareentwicklung</h1><p></p>";
+								if (languageMode == languageMode_en) clickTeaser="<p></p><h1 align=\"center\">Automate your software development</h1><p></p>";
 								return getLandingSystemFact();
 							}
 							return "";
