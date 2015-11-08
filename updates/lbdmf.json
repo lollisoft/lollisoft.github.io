@@ -12,6 +12,14 @@
     "urls": [],
     "releases": [
         {
+            "version": "1.2.0",
+            "state": "stable",
+            "scope": "major feature",
+            "changes": "This release contains several improvements.\n\nShortly listed are the following:\n\n* New feature that allows multiple relationships between classes (eg. users that are owning vs be responsible to something).\n\n* Repeatable UML (XMI) import without errors (even if the UML model has been modified - eg. new or removed classes)\n\n* New property dialog that will be used in future to enable activity diagrams to use data input dialogs or the like.\n\nPlease try out the new release for the following features:\n\nCan install the application,\nCan run the application,\nCan update the application model itself,\nCan generate code and for DevExpress (if you have a Windows OS), if not, try generating the Turbo Vision application.\nCan build the generated code (DevExpress), or have a look if the Turbo Vision code appears within a Code folder.\nCan generate the lbDMF-wxWidgtes-Dialog-Blocks-Generator code, build it and run it.\n\nNote: This release does not contain changes to code generators that are packaged separately and thus they should be\nobtained from earlier versions.\n\nI would thank you all for your feedback.\n\nSince a while I collect some statistics about my users of this software (by accessing update information from my web page).\nPlease let the software do this or remove the lbwxUpdateChecker plugin.\n\nHave you noticed my new website? Have a look at it (http://www.lollisoft.de) and tell me your opinions.\nAlso I do publish articles from time to time at codeproject. Here you will find my articles:\nhttp://www.codeproject.com/script/Articles/MemberArticles.aspx?amid=6479465\n\nLothar Behrens",
+            "download": "https://sourceforge.net/projects/lbdmf/files/lbdmf/lbDMF-1.2.0/",
+            "published": "2015-11-08T10:51:31+0000"
+        },
+        {
             "version": "1.1.1",
             "state": "stable",
             "scope": "major feature",
