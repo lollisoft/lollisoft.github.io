@@ -54,7 +54,7 @@
       </div>
       <div id="teaser">
       <p></p>
-        <h1 align="center">Danke, dass Sie dieses Produkt installieren!</h1>
+        <h1 align="center">Hier haben Sie ab sofort eine Seite um Kommentare zu hinterlassen</h1>
       <p></p>
       </div>
 		
@@ -70,7 +70,6 @@
         <div id="col3">
           <div id="col3_content" class="clearfix">
             <!-- add your content here -->
-             <p>Hier finden Sie in Zukunft weitere Informationen.</p>
              
              
                 <div id="discus_german">
@@ -94,7 +93,6 @@
          <div id="col3">
            <div id="col3_content" class="clearfix">
              <!-- Add your content here-->
-             <p>Here you will find additional information.</p>
              
              
                 <div id="discus_enlish">
@@ -132,6 +130,8 @@
 
 		if (languageMode == languageMode_de) {
 			languageMode=languageMode_en;
+            
+            $("#teaser").html("<p></p><h1 align=\"center\">Please leave a comment</h1><p></p>");
 			$("#language").html("<img src=\"images/de.png\" onclick=\"switchLanguage();\" alt=\"german\">");
 
 
@@ -159,6 +159,8 @@
 			$("#english").fadeIn();
 		} else {
 			languageMode=languageMode_de;
+
+			$("#teaser").html("<p></p><h1 align=\"center\">Bitte hinterlasen Sie einen Kommentar</h1><p></p>");
 			$("#language").html("<img src=\"images/en.png\" onclick=\"switchLanguage();\" alt=\"english\">");
             
             $("#discus_enlish").html("");
@@ -187,6 +189,7 @@
 	
 	}
 
+	$("#teaser").html("<p></p><h1 align=\"center\">Please leave a comment</h1><p></p>");
 	$("#language").html("<img src=\"images/en.png\" onclick=\"switchLanguage();\" alt=\"english\">");
 
             $("#discus_german").html("");
