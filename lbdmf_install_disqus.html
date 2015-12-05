@@ -73,28 +73,9 @@
              <p>Hier finden Sie in Zukunft weitere Informationen.</p>
              
              
-             <div id="disqus_thread_german"></div>
-<script>
-    /**
-     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-     */
-    /*
-    var disqus_config = function () {
-        this.page.url = "http://www.lollisoft.de/lbdmf_install_disqus.html";  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = "lbdmfbinarysamplesinstallerfeedback"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() {  // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-        
-        s.src = '//lbdmfbinarysamplesinstallerfeedback.disqus.com/embed.js';
-        
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+                <div id="discus_german">
+                </div>
+
              
             </div>
           </div>
@@ -116,30 +97,10 @@
              <p>Here you will find additional information.</p>
              
              
-             
-                          <div id="disqus_thread_english"></div>
-<script>
-    /**
-     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-     */
-    /*
-    var disqus_config = function () {
-        this.page.url = "http://www.lollisoft.de/lbdmf_install_disqus.html";  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = "lbdmfbinarysamplesinstallerfeedback"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() {  // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-        
-        s.src = '//lbdmfbinarysamplesinstallerfeedback.disqus.com/embed.js';
-        
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+                <div id="discus_enlish">
+                </div>
 
+             
              
              </div>
            </div>
@@ -172,11 +133,53 @@
 		if (languageMode == languageMode_de) {
 			languageMode=languageMode_en;
 			$("#language").html("<img src=\"images/de.png\" onclick=\"switchLanguage();\" alt=\"german\">");
+
+
+            $("#discus_enlish").html("<div id=\"disqus_thread\"></div><script>/*\
+    var disqus_config = function () {\
+        this.page.url = \"http://www.lollisoft.de/lbdmf_install_disqus.html\";\
+        this.page.identifier = \"lbdmfbinarysamplesinstallerfeedback\";\
+    };\
+    */\
+    (function() {\
+        var d = document, s = d.createElement('script');\
+\
+        s.src = '//lbdmfbinarysamplesinstallerfeedback.disqus.com/embed.js';\
+\
+        s.setAttribute('data-timestamp', +new Date());\
+        (d.head || d.body).appendChild(s);\
+    })();\
+</script>\
+<noscript>Please enable JavaScript to view the <a href=\"https://disqus.com/?ref_noscript\" rel=\"nofollow\">comments powered by Disqus.</a></noscript>\
+            ");
+
+
 			$("#german").fadeOut();
 			$("#english").fadeIn();
 		} else {
 			languageMode=languageMode_de;
 			$("#language").html("<img src=\"images/en.png\" onclick=\"switchLanguage();\" alt=\"english\">");
+            
+            
+            $("#discus_german").html("<div id=\"disqus_thread\"></div><script>/*\
+    var disqus_config = function () {\
+        this.page.url = \"http://www.lollisoft.de/lbdmf_install_disqus.html\";\
+        this.page.identifier = \"lbdmfbinarysamplesinstallerfeedback\";\
+    };\
+    */\
+    (function() {\
+        var d = document, s = d.createElement('script');\
+\
+        s.src = '//lbdmfbinarysamplesinstallerfeedback.disqus.com/embed.js';\
+\
+        s.setAttribute('data-timestamp', +new Date());\
+        (d.head || d.body).appendChild(s);\
+    })();\
+</script>\
+<noscript>Please enable JavaScript to view the <a href=\"https://disqus.com/?ref_noscript\" rel=\"nofollow\">comments powered by Disqus.</a></noscript>\
+            ");
+            
+            
 			$("#english").fadeOut();
 			$("#german").fadeIn();
 		}
@@ -184,6 +187,25 @@
 	}
 
 	$("#language").html("<img src=\"images/en.png\" onclick=\"switchLanguage();\" alt=\"english\">");
+
+            $("#discus_german").html("<div id=\"disqus_thread\"></div><script>/*\
+    var disqus_config = function () {\
+        this.page.url = \"http://www.lollisoft.de/lbdmf_install_disqus.html\";\
+        this.page.identifier = \"lbdmfbinarysamplesinstallerfeedback\";\
+    };\
+    */\
+    (function() {\
+        var d = document, s = d.createElement('script');\
+\
+        s.src = '//lbdmfbinarysamplesinstallerfeedback.disqus.com/embed.js';\
+\
+        s.setAttribute('data-timestamp', +new Date());\
+        (d.head || d.body).appendChild(s);\
+    })();\
+</script>\
+<noscript>Please enable JavaScript to view the <a href=\"https://disqus.com/?ref_noscript\" rel=\"nofollow\">comments powered by Disqus.</a></noscript>\
+            ");
+
 
 	$("#english").hide();
 //-->
