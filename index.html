@@ -267,16 +267,19 @@
 
 						window.onunload = function(){};
 						window.onload=function(){
-							var userLang = navigator.language || navigator.userLanguage; 
+						        var userLang = navigator.language || navigator.userLanguage;
 
-							if (userLang != "de") {
-								languageMode=languageMode_de;
-								switchLanguage(1);
-							}
+						        if (userLang != "de") {
+					       			languageMode=languageMode_de;
+						        } else {
+					        		languageMode=languageMode_en;
+						        }
 
+						        switchLanguage();
 							clearInterval(timerID);
 							timerID=setInterval("CountdownTimer()",1000);
 						};
+
 
 						//--></script>
 					<script type="text/javascript"><!--
