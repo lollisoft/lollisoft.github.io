@@ -48,6 +48,7 @@
           <!-- main navigation: horizontal list -->
           <ul>
             <li><a href="home.html">Home</a></li>
+            <li><a href="lbdmf_userfeedback_disqus.html">Go to discussion</a></li>
           </ul>
         </div>
       </div>
@@ -58,9 +59,7 @@
       <p></p>
       </div>
 		
-		
-		
-				<div id="german">
+<div id="german">
       <div id="main">
         <div id="col1">
           <div id="col1_content" class="clearfix">
@@ -70,16 +69,16 @@
         <div id="col3">
           <div id="col3_content" class="clearfix">
             <!-- add your content here -->
-             <p>Bitte teilen Sie mir mit warum Sie entt&auml;uscht sind.</p>
+             <p>Bitte teilen Sie mir auf der Diskussionsseite mit was Sie von dem Produkt halten.</p>
             </div>
           </div>
           <!-- IE Column Clearing -->
           <div id="ie_clearing">&#160; </div>
         </div>
-				</div>
-				
-				<div id="english">
-<div id="main">
+</div>
+
+<div id="english">
+        <div id="main">
          <div id="col1">
            <div id="col1_content" class="clearfix">
              <!-- Add your content here-->
@@ -88,13 +87,14 @@
          <div id="col3">
            <div id="col3_content" class="clearfix">
              <!-- Add your content here-->
-             <p>Please tell me why you are disapointed.</p>
+             <p>Please tell me at the discussion page what you think about the product.</p>
              </div>
            </div>
            <!-- IE Column Clearing-->
            <div id="ie_clearing"></div>
-         </div>
-		 				</div>
+        </div>
+</div>
+		
 		
 		
     	 					<!-- begin: #footer -->
@@ -112,25 +112,47 @@
 <script type="text/javascript" src="js/lib/jquery-1.6.1.min.js"></script>
 
 <script type="text/javascript"><!--
-	var languageMode=1;
-	var languageMode_de=1;
-	var languageMode_en=2;
+var languageMode=1;
+var languageMode_de=1;
+var languageMode_en=2;
 
-	var switchLanguage=function() {
+window.onunload = function(){};
+window.onload=function(){
+        var userLang = navigator.language || navigator.userLanguage;
 
-		if (languageMode == languageMode_de) {
-			languageMode=languageMode_en;
-			$("#language").html("<img src=\"images/de.png\" onclick=\"switchLanguage();\" alt=\"german\">");
-			$("#german").fadeOut();
-			$("#english").fadeIn();
-		} else {
-			languageMode=languageMode_de;
-			$("#language").html("<img src=\"images/en.png\" onclick=\"switchLanguage();\" alt=\"english\">");
-			$("#english").fadeOut();
-			$("#german").fadeIn();
-		}
-	
-	}
+        if (userLang != "de") {
+                languageMode=languageMode_de;
+        } else {
+                languageMode=languageMode_en;
+        }
+
+        switchLanguage();
+};
+
+        var switchLanguage=function() {
+
+                if (languageMode == languageMode_de) {
+                        languageMode=languageMode_en;
+                        $("#language").html("<img src=\"images/de.png\" onclick=\"switchLanguage();\" alt=\"german\">");
+                        $("#pagetitle").html("Get software from your ideas fast");
+                        $("#teaser").html("<p></p><h1 align=\"center\">Thank you for your feedback!</h1><p></p>");
+                        $("#topnav").html("<a class=\"skip\" title=\"skip link\" href=\"#navigation\">Skip to the navigation</a><span class=\"hideme\">.</span><a class=\"skip\" title=\"skip link\" href=\"#content\">Skip to the content</a><span class=\"hideme\">.</span><!-- end: skip link navigation --><a href=\"https://twitter.com/lollisoft\">Contact (via Twitter)</a> | <a href=\"impressum.html\">About us</a> | <a href=\"datenschutz.html\">Privacy</a>");
+                        $("#nav").html("<div id=\"nav\"><!-- skiplink anchor: navigation --><a id=\"navigation\" name=\"navigation\"></a><div class=\"hlist\"><!-- main navigation: horizontal list --><ul><li class=\"active\"><strong>Home</strong></li><li><a href=\"lbdmf_userfeedback_disqus.html\">Go to discussion</a></li></ul></div></div>");
+                        $("#german").fadeOut();
+                        $("#english").fadeIn();
+                } else {
+                        languageMode=languageMode_de;
+                        $("#language").html("<img src=\"images/en.png\" onclick=\"switchLanguage();\" alt=\"english\">");
+                        $("#pagetitle").html("Von der Idee schnell zur Software");
+                        $("#teaser").html("<p></p><h1 align=\"center\">Danke f&uuml;r Ihr Feedback!</h1><p></p>");
+                        $("#topnav").html("<a class=\"skip\" title=\"skip link\" href=\"#navigation\">Skip to the navigation</a><span class=\"hideme\">.</span><a class=\"skip\" title=\"skip link\" href=\"#content\">Skip to the content</a><span class=\"hideme\">.</span><!-- end: skip link navigation --><a href=\"https://twitter.com/lollisoft\">Kontakt (via Twitter)</a> | <a href=\"impressum.html\">Impressum</a> | <a href=\"datenschutz.html\">Datenschutz</a>");
+                        $("#nav").html("<div id=\"nav\"><!-- skiplink anchor: navigation --><a id=\"navigation\" name=\"navigation\"></a><div class=\"hlist\"><!-- main navigation: horizontal list --><ul><li class=\"active\"><strong>Home</strong></li><li><a href=\"lbdmf_userfeedback_disqus.html\">Zur Diskussion</a></li></ul></div></div>");
+                        $("#english").fadeOut();
+                        $("#german").fadeIn();
+                }
+
+
+        }
 
 	$("#language").html("<img src=\"images/en.png\" onclick=\"switchLanguage();\" alt=\"english\">");
 
