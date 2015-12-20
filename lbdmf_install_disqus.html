@@ -54,7 +54,6 @@
       </div>
       <div id="teaser">
       <p></p>
-        <h1 align="center">Hier haben Sie ab sofort eine Seite um Kommentare zu hinterlassen</h1>
       <p></p>
       </div>
 		
@@ -122,33 +121,33 @@
 	var languageMode_de=1;
 	var languageMode_en=2;
 
+window.onunload = function(){};
+window.onload=function(){
+        var userLang = navigator.language || navigator.userLanguage;
+
+        if (userLang != "de") {
+                languageMode=languageMode_de;
+        } else {
+                languageMode=languageMode_en;
+        }
+
+        switchLanguage();
+};
+
 	var switchLanguage=function() {
 
 		if (languageMode == languageMode_de) {
 			languageMode=languageMode_en;
             
-            $("#teaser").html("<p></p><h1 align=\"center\">Please leave a comment</h1><p></p>");
+			$("#teaser").html("<p></p><h1 align=\"center\">Please leave a comment</h1><p></p>");
+			$("#pagetitle").html("Get software from your ideas fast");
 			$("#language").html("<img src=\"images/de.png\" onclick=\"switchLanguage();\" alt=\"german\">");
+                        $("#topnav").html("<a class=\"skip\" title=\"skip link\" href=\"#navigation\">Skip to the navigation</a><span class=\"hideme\">.</span><a class=\"skip\" title=\"skip link\" href=\"#content\">Skip to the content</a><span class=\"hideme\">.</span><!-- end: skip link navigation --><a href=\"https://twitter.com/lollisoft\">Contact (via Twitter)</a> | <a href=\"impressum.html\">About us</a> | <a href=\"datenschutz.html\">Privacy</a>");
+                        $("#nav").html("<div id=\"nav\"><!-- skiplink anchor: navigation --><a id=\"navigation\" name=\"navigation\"></a><div class=\"hlist\"><!-- main navigation: horizontal list --><ul><li class=\"active\"><strong>Home</strong></li><li><a href=\"product1.html\">Distributed Multiplatform Framework</a></li></ul></div></div>");
 
 
-            $("#discus_german").html("");
-            $("#discus_enlish").html("<div id=\"disqus_thread\"></div><script>/*\
-    var disqus_config = function () {\
-        this.page.url = \"http://www.lollisoft.de/lbdmf_install_disqus.html\";\
-        this.page.identifier = \"lbdmfbinarysamplesinstallerfeedback\";\
-    };\
-    */\
-    (function() {\
-        var d = document, s = d.createElement('script');\
-\
-        s.src = '//lbdmfbinarysamplesinstallerfeedback.disqus.com/embed.js';\
-\
-        s.setAttribute('data-timestamp', +new Date());\
-        (d.head || d.body).appendChild(s);\
-    })();\
-</script>\
-<noscript>Please enable JavaScript to view the <a href=\"https://disqus.com/?ref_noscript\" rel=\"nofollow\">comments powered by Disqus.</a></noscript>\
-            ");
+                        $("#discus_german").html("");
+                        $("#discus_enlish").html("<div id=\"disqus_thread\"></div><script>/*var disqus_config = function () {this.page.url = \"http://www.lollisoft.de/lbdmf_install_disqus.html\";this.page.identifier = \"lbdmfbinarysamplesinstallerfeedback\";};*/(function() {var d = document, s = d.createElement('script');s.src = '//lbdmfbinarysamplesinstallerfeedback.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();<\/script><noscript>Please enable JavaScript to view the <a href=\"https://disqus.com/?ref_noscript\" rel=\"nofollow\">comments powered by Disqus.</a></noscript>");
 
 
 			$("#german").fadeOut();
@@ -157,27 +156,13 @@
 			languageMode=languageMode_de;
 
 			$("#teaser").html("<p></p><h1 align=\"center\">Bitte hinterlasen Sie einen Kommentar</h1><p></p>");
+			$("#pagetitle").html("Von der Idee schnell zur Software");
 			$("#language").html("<img src=\"images/en.png\" onclick=\"switchLanguage();\" alt=\"english\">");
+                        $("#topnav").html("<a class=\"skip\" title=\"skip link\" href=\"#navigation\">Skip to the navigation</a><span class=\"hideme\">.</span><a class=\"skip\" title=\"skip link\" href=\"#content\">Skip to the content</a><span class=\"hideme\">.</span><!-- end: skip link navigation --><a href=\"https://twitter.com/lollisoft\">Kontakt (via Twitter)</a> | <a href=\"impressum.html\">Impressum</a> | <a href=\"datenschutz.html\">Datenschutz</a>");
+                        $("#nav").html("<div id=\"nav\"><!-- skiplink anchor: navigation --><a id=\"navigation\" name=\"navigation\"></a><div class=\"hlist\"><!-- main navigation: horizontal list --><ul><li class=\"active\"><strong>Home</strong></li><li><a href=\"product1.html\">Distributed Multiplatform Framework</a></li></ul></div></div>");
             
-            $("#discus_enlish").html("");
-            $("#discus_german").html("<div id=\"disqus_thread\"></div><script>/*\
-    var disqus_config = function () {\
-        this.page.url = \"http://www.lollisoft.de/lbdmf_install_disqus.html\";\
-        this.page.identifier = \"lbdmfbinarysamplesinstallerfeedback\";\
-    };\
-    */\
-    (function() {\
-        var d = document, s = d.createElement('script');\
-\
-        s.src = '//lbdmfbinarysamplesinstallerfeedback.disqus.com/embed.js';\
-\
-        s.setAttribute('data-timestamp', +new Date());\
-        (d.head || d.body).appendChild(s);\
-    })();\
-</script>\
-<noscript>Please enable JavaScript to view the <a href=\"https://disqus.com/?ref_noscript\" rel=\"nofollow\">comments powered by Disqus.</a></noscript>\
-            ");
-            
+                        $("#discus_enlish").html("");
+                        $("#discus_german").html("<div id=\"disqus_thread\"></div><script>/*var disqus_config = function () {this.page.url = \"http://www.lollisoft.de/lbdmf_install_disqus.html\";this.page.identifier = \"lbdmfbinarysamplesinstallerfeedback\";};*/(function() {var d = document, s = d.createElement('script');s.src = '//lbdmfbinarysamplesinstallerfeedback.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();<\/script><noscript>Please enable JavaScript to view the <a href=\"https://disqus.com/?ref_noscript\" rel=\"nofollow\">comments powered by Disqus.</a></noscript>");
             
 			$("#english").fadeOut();
 			$("#german").fadeIn();
@@ -185,30 +170,8 @@
 	
 	}
 
-	$("#teaser").html("<p></p><h1 align=\"center\">Bitte hinterlasen Sie einen Kommentar</h1><p></p>");
-	$("#language").html("<img src=\"images/en.png\" onclick=\"switchLanguage();\" alt=\"english\">");
+	switchLanguage();
 
-            $("#discus_german").html("");
-            $("#discus_german").html("<div id=\"disqus_thread\"></div><script>/*\
-    var disqus_config = function () {\
-        this.page.url = \"http://www.lollisoft.de/lbdmf_install_disqus.html\";\
-        this.page.identifier = \"lbdmfbinarysamplesinstallerfeedback\";\
-    };\
-    */\
-    (function() {\
-        var d = document, s = d.createElement('script');\
-\
-        s.src = '//lbdmfbinarysamplesinstallerfeedback.disqus.com/embed.js';\
-\
-        s.setAttribute('data-timestamp', +new Date());\
-        (d.head || d.body).appendChild(s);\
-    })();\
-</script>\
-<noscript>Please enable JavaScript to view the <a href=\"https://disqus.com/?ref_noscript\" rel=\"nofollow\">comments powered by Disqus.</a></noscript>\
-            ");
-
-
-	$("#english").hide();
 //-->
 </script>
 <script>
