@@ -57,9 +57,7 @@
       <p></p>
       </div>
 		
-		
-		
-				<div id="german">
+<div id="german">
       <div id="main">
         <div id="col1">
           <div id="col1_content" class="clearfix">
@@ -69,21 +67,19 @@
         <div id="col3">
           <div id="col3_content" class="clearfix">
             <!-- add your content here -->
-             
-             
+
                 <div id="discus_german">
                 </div>
 
-             
             </div>
           </div>
           <!-- IE Column Clearing -->
           <div id="ie_clearing">&#160; </div>
         </div>
-				</div>
-				
-				<div id="english">
-<div id="main">
+</div>  
+
+<div id="english">
+        <div id="main">
          <div id="col1">
            <div id="col1_content" class="clearfix">
              <!-- Add your content here-->
@@ -92,19 +88,18 @@
          <div id="col3">
            <div id="col3_content" class="clearfix">
              <!-- Add your content here-->
-             
-             
+
                 <div id="discus_enlish">
                 </div>
 
-             
-             
              </div>
            </div>
+           
            <!-- IE Column Clearing-->
            <div id="ie_clearing"></div>
          </div>
-		 				</div>
+</div>  
+		
 		
 		
     	 					<!-- begin: #footer -->
@@ -147,6 +142,27 @@ window.onload=function(){
                         $("#teaser").html("<p></p><h1 align=\"center\">Here you can discuss about the product</h1><p></p>");
                         $("#topnav").html("<a class=\"skip\" title=\"skip link\" href=\"#navigation\">Skip to the navigation</a><span class=\"hideme\">.</span><a class=\"skip\" title=\"skip link\" href=\"#content\">Skip to the content</a><span class=\"hideme\">.</span><!-- end: skip link navigation --><a href=\"https://twitter.com/lollisoft\">Contact (via Twitter)</a> | <a href=\"impressum.html\">About us</a> | <a href=\"datenschutz.html\">Privacy</a>");
                         $("#nav").html("<div id=\"nav\"><!-- skiplink anchor: navigation --><a id=\"navigation\" name=\"navigation\"></a><div class=\"hlist\"><!-- main navigation: horizontal list --><ul><li class=\"active\"><strong>Home</strong></li><li><a href=\"product1.html\">Distributed Multiplatform Framework</a></li></ul></div></div>");
+
+            $("#discus_german").html("");
+            $("#discus_enlish").html("<div id=\"disqus_thread\"></div><script>/*\
+    var disqus_config = function () {\
+        this.page.url = \"http://www.lollisoft.de/lbdmf_install_disqus.html\";\
+        this.page.identifier = \"lbdmfbinarysamplesinstallerfeedback\";\
+    };\
+    */\
+    (function() {\
+        var d = document, s = d.createElement('script');\
+\
+        s.src = '//lbdmfbinarysamplesinstallerfeedback.disqus.com/embed.js';\
+\
+        s.setAttribute('data-timestamp', +new Date());\
+        (d.head || d.body).appendChild(s);\
+    })();\
+</script>\
+<noscript>Please enable JavaScript to view the <a href=\"https://disqus.com/?ref_noscript\" rel=\"nofollow\">comments powered by Disqus.</a></noscript>\
+            ");
+
+
                         $("#german").fadeOut();
                         $("#english").fadeIn();
                 } else {
@@ -156,6 +172,28 @@ window.onload=function(){
                         $("#teaser").html("<p></p><h1 align=\"center\">Hier k&ouml;nnen Sie &uuml;ber das Produkt diskutieren</h1><p></p>");
                         $("#topnav").html("<a class=\"skip\" title=\"skip link\" href=\"#navigation\">Skip to the navigation</a><span class=\"hideme\">.</span><a class=\"skip\" title=\"skip link\" href=\"#content\">Skip to the content</a><span class=\"hideme\">.</span><!-- end: skip link navigation --><a href=\"https://twitter.com/lollisoft\">Kontakt (via Twitter)</a> | <a href=\"impressum.html\">Impressum</a> | <a href=\"datenschutz.html\">Datenschutz</a>");
 			$("#nav").html("<div id=\"nav\"><!-- skiplink anchor: navigation --><a id=\"navigation\" name=\"navigation\"></a><div class=\"hlist\"><!-- main navigation: horizontal list --><ul><li class=\"active\"><strong>Home</strong></li><li><a href=\"product1.html\">Distributed Multiplatform Framework</a></li></ul></div></div>");
+
+
+            $("#discus_enlish").html("");
+            $("#discus_german").html("<div id=\"disqus_thread\"></div><script>/*\
+    var disqus_config = function () {\
+        this.page.url = \"http://www.lollisoft.de/lbdmf_install_disqus.html\";\
+        this.page.identifier = \"lbdmfbinarysamplesinstallerfeedback\";\
+    };\
+    */\
+    (function() {\
+        var d = document, s = d.createElement('script');\
+\
+        s.src = '//lbdmfbinarysamplesinstallerfeedback.disqus.com/embed.js';\
+\
+        s.setAttribute('data-timestamp', +new Date());\
+        (d.head || d.body).appendChild(s);\
+    })();\
+</script>\
+<noscript>Please enable JavaScript to view the <a href=\"https://disqus.com/?ref_noscript\" rel=\"nofollow\">comments powered by Disqus.</a></noscript>\
+            ");
+
+
                         $("#english").fadeOut();
                         $("#german").fadeIn();
                 }
