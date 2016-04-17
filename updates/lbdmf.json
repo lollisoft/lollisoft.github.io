@@ -12,6 +12,22 @@
     "urls": [],
     "releases": [
         {
+            "version": "1.3.1",
+            "state": "stable",
+            "scope": "major feature",
+            "changes": "This release contains several improvements and an extended data format. \n\nThus a minor release rather than a micro release. Shortly listed are the following: \n\nAdded new tables and data structures (formularfields, dbcolumns), added documentation about the new feature (page 16). \nAdded writing column ID value to enable easier lookup of tables within XSLT queries. Required for the above feature. \nFixed bugs in XSLT import. Added missing master detail action for parameters. \n\nIncreased product versions for the sample UML models (StsManagement and OpenSourceStoreReview).\nDevExpress XPO introduced incompatible changes by my last update to 15.2. \n\nAdded a new plugin to try to get GrayLog integrated. But it seems to fail on Windows.\nCurrently I have deactivated that in builds and it needs more work.",
+            "download": "https://sourceforge.net/projects/lbdmf/files/lbdmf/lbDMF-1.3.1/",
+            "published": "2016-04-17T09:04:14+0000"
+        },
+        {
+            "version": "1.2.0-1",
+            "state": "stable",
+            "scope": "minor bugfix",
+            "changes": "This release contains only a fix for the CAB DevExpress Codegenerator compilation.\n\nThe templates are configurable for the DevExpress version\nthat is in use. This did not reflected in all generated\nparts of the code and produced compile errors. \n\nLothar Behrens",
+            "download": "https://sourceforge.net/projects/lbdmf/files/lbdmf/lbDMF-1.2.0/",
+            "published": "2016-03-13T22:30:56+0000"
+        },
+        {
             "version": "1.2.0",
             "state": "stable",
             "scope": "major feature",
