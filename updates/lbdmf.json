@@ -12,6 +12,14 @@
     "urls": [],
     "releases": [
         {
+            "version": "1.3.2",
+            "state": "stable",
+            "scope": "major feature",
+            "changes": "This release contains two new UML models for logging and demonstrating copies of UML models. The UML model copy has been sligthly changed (model name and configuration) to show deployment to a different geographical location (using different certificates and endpoints). Watch my Youtube video about this release. Note: Real federated identity is not yet fully implemented, but I think is not far away to let two STS instances federate. https://youtu.be/sqsc_l-grew",
+            "download": "https://sourceforge.net/projects/lbdmf/files/lbdmf/lbDMF-1.3.2/",
+            "published": "2016-06-12T12:33:00+0000"
+        },
+        {
             "version": "1.3.1",
             "state": "stable",
             "scope": "major feature",
