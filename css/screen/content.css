@@ -10,8 +10,8 @@
  * @link            http://www.yaml.de
  * @package         yaml
  * @version         3.2.1
- * @revision        $Revision: 1.15 $
- * @lastmodified    $Date: 2014/06/20 13:43:36 $
+ * @revision        $Revision: 1.16 $
+ * @lastmodified    $Date: 2016/08/13 09:36:48 $
  * @appdef yaml
  */
 
@@ -316,6 +316,39 @@ width: inherit;
   *
   * @section content-generic-classes
   */
+
+  .devexpress-linktitle {
+    float:top;
+    font-weight: 200;
+    font-size: 11px;
+    line-height: 15px;
+    max-height: 30px;
+    clear: both;
+  }
+  .lollisoft-linktitle {
+    float:top;
+    font-weight: 200;
+    font-size: 11px;
+    line-height: 15px;
+    max-height: 30px;
+    clear: both;
+  }
+  .devexpress-linkdetails {
+    float:top;
+    font-weight: 200;
+    font-size: 8px;
+    line-height: 15px;
+    max-height: 30px;
+    clear: both;
+  }
+  .lollisoft-linkdetails {
+    float:top;
+    font-weight: 200;
+    font-size: 8px;
+    line-height: 15px;
+    max-height: 30px;
+    clear: both;
+  }
 
   .highlight { color:#c30; }
   .dimmed { color:#888; }
