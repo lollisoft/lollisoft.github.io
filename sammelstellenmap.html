@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <title>Sammelstellen Orientierung Flutopferhilfe</title>
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map-canvas { height: 100% }
+    </style>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuDR2XKSMj23Sz4tTPGkxYh7G1Vu2uTFQ&sensor=false">
+    </script>
+    <script type="text/javascript" src="markerclusterer.min.js"></script>
+    <script type="text/javascript" src="markerwithlabel.js"></script>
+    <script type="text/javascript" src="oms.min.js"></script>
+    <script type="text/javascript" src="sammelstellen-status.json"></script>
+    <script type="text/javascript">
+    function pinSymbol(color) {
+        return {
+            path: 'M 0,0 C -2,-20 -10,-22 -10,-30 A 10,10 0 1,1 10,-30 C 10,-22 2,-20 0,0 z',
+            fillColor: color,
+            fillOpacity: 1,
+            strokeColor: '#000',
+            strokeWeight: 2,
+            scale: 1.2
+        };
+    }
+                                
+    function initialize() {
+        var mapOptions = {
+            center: new google.maps.LatLng(29.382175,-18.132935),
+            zoom: 3,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+        var iw = new google.maps.InfoWindow();
+
+        var oms = new OverlappingMarkerSpiderfier(map, { markersWontMove: true, markersWontHide: true, basicFormatEvents: true });
+
+        var markers = [];
+    
+        for (var i = 0; i < data.length; i++) {
+            var loc = data[i];
+        
+            if (loc.lat && loc.long) {
+                var latLng = new google.maps.LatLng(loc.lat, loc.long);
+
+                var markerOrg = new google.maps.Marker({'position': latLng});
+        
+                var color = "green";
+            
+                //if (loc.os == "Windows") color = "orange";
+                //if (loc.os == "Linux") color = "green";
+                //if (loc.os == "Mac") color = "yellow";
+    	    
+                var marker = new google.maps.Marker({
+                'position': latLng,
+                map: map,
+                sammelstelle: loc.sammelstelle,
+                needs: loc.label
+                //, 'label': loc.os + ": " + loc.label
+                });
+
+                var str1 = "http://maps.google.com/mapfiles/ms/icons/";
+                marker.setIcon(str1.concat(color, "-dot.png"));
+
+                google.maps.event.addListener(marker, 'mouseover', function() {
+                    iw.setContent(
+'<div><strong>' + 
+'Sammelstelle: ' + 
+'</strong>' + this.sammelstelle + '<br>' + 
+'<div><strong>' + 
+'Wird am wichtigsten gebraucht: ' + 
+'</strong>' + this.needs + '<br>' + 
+'<a href="http://www.lollisoft.de/sammelstellen.html#' + this.sammelstelle + '" target="popup">' + this.sammelstelle + '</a></div>');
+                    
+                    iw.open(map, this);
+                });
+                
+                google.maps.event.addListener(marker, 'mouseout', function() {
+                    //iw.close();
+                });
+
+                markers.push(marker);
+            }
+            
+            oms.addMarker(marker);  
+        }
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+    
+
+    </script>
+  </head>
+  <body>
+    <div id="map-canvas"/>
+  </body>
+</html>
