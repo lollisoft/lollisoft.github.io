@@ -12,6 +12,14 @@
     "urls": [],
     "releases": [
         {
+            "version": "1.3.4",
+            "state": "development",
+            "scope": "minor feature",
+            "changes": "Ported under Windows 10 to wxWidgets 3.2.2.1. Basically reactivated my development activities. This is a preview release that is most tested on Windows 10. Also the release contains a Mac OS X ARM (Silicon) dmg as a new target supporting most resent Macs. The Mac ARM version is signed and notarized. The Windows installers are signed with my new OSS developer certificate. Still the Linux version is to be ported.",
+            "download": "https://sourceforge.net/projects/lbdmf/files/lbdmf/lbDMF-1.3.4/",
+            "published": "2024-08-23T18:00:00:00+0000"
+        },
+        {
             "version": "1.3.3",
             "state": "preview",
             "scope": "minor feature",
